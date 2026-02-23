@@ -3,654 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Kelas TKJ 2 - 40 Siswa</title>
+    <title>Website TKJ 2</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f9ff;
-            color: #333;
-            line-height: 1.6;
-            padding-top: 80px;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(135deg, #2c3e50, #1a2530);
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #3498db;
-            background: white;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 25px;
-            position: relative;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links a i {
-            margin-right: 8px;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            background-color: rgba(52, 152, 219, 0.2);
-            color: #3498db;
-        }
-
-        /* Dropdown Menu for Students */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            min-width: 320px;
-            max-height: 500px;
-            overflow-y: auto;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            z-index: 1001;
-            padding: 10px 0;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .dropdown-menu a {
-            color: #333;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #eee;
-            transition: all 0.2s ease;
-            font-size: 0.95rem;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #f0f7ff;
-            color: #3498db;
-            padding-left: 25px;
-        }
-
-        .dropdown-menu a:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-avatar {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            margin-right: 10px;
-            object-fit: cover;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Section Styling */
-        .section {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        /* Home Section */
-        header {
-            background: linear-gradient(135deg, #2c3e50, #4a6491);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .class-info {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        .info-item {
-            text-align: center;
-            padding: 15px;
-            min-width: 200px;
-        }
-
-        .info-item i {
-            font-size: 2.5rem;
-            color: #3498db;
-            margin-bottom: 10px;
-        }
-
-        .info-item h3 {
-            margin-bottom: 5px;
-            color: #2c3e50;
-        }
-
-        .quick-actions {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .action-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .action-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .action-card i {
-            font-size: 2.5rem;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-
-        .action-card h3 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        /* Wali Kelas Section */
-        .wali-container-screenshot {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .wali-profile {
-            margin-bottom: 30px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-        }
-
-        .wali-profile:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .wali-name {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .wali-name i {
-            color: #3498db;
-            margin-right: 10px;
-            font-size: 1.8rem;
-        }
-
-        .wali-nip {
-            font-size: 1.1rem;
-            color: #7f8c8d;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .wali-role {
-            display: inline-block;
-            background: #e74c3c;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .wali-divider {
-            height: 2px;
-            background: linear-gradient(to right, #3498db, transparent);
-            margin: 20px 0;
-        }
-
-        .wali-subsection {
-            margin-top: 20px;
-        }
-
-        .wali-subsection h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .wali-subsection h3 i {
-            margin-right: 10px;
-            color: #3498db;
-        }
-
-        .wali-education-item {
-            margin-bottom: 15px;
-            padding-left: 15px;
-            border-left: 3px solid #3498db;
-        }
-
-        .wali-education-title {
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 3px;
-        }
-
-        .wali-education-desc {
-            color: #555;
-        }
-
-        /* Student Profile Section */
-        .student-container {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .student-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        .student-avatar {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 30px;
-            border: 5px solid #f0f7ff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
-        }
-
-        .student-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .student-info h2 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-            font-size: 1.8rem;
-        }
-
-        .student-info .student-nis {
-            color: #7f8c8d;
-            margin-bottom: 5px;
-            font-size: 1rem;
-        }
-
-        .student-details-simple {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .detail-row {
-            display: flex;
-            background: #f9f9f9;
-            padding: 15px 20px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-            align-items: center;
-        }
-
-        .detail-row i {
-            width: 30px;
-            color: #3498db;
-            font-size: 1.2rem;
-        }
-
-        .detail-row .label {
-            font-weight: 600;
-            min-width: 120px;
-            color: #2c3e50;
-        }
-
-        .detail-row .value {
-            color: #555;
-            flex: 1;
-        }
-
-        /* All Students Section - TANPA FILTER */
-        .all-students-container {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .student-info-header {
-            margin-bottom: 25px;
-            font-size: 1.2rem;
-            color: #2c3e50;
-            font-weight: 500;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-
-        .students-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .student-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .student-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
-            border-color: #3498db;
-        }
-
-        .student-card-header {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            min-height: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .student-card-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid white;
-            margin: 0 auto 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .student-card-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .student-card-header h3 {
-            margin-bottom: 5px;
-            font-size: 1.3rem;
-        }
-
-        .student-card-body {
-            padding: 20px;
-        }
-
-        .student-card-detail-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-
-        .student-card-detail-item i {
-            width: 20px;
-            color: #3498db;
-            margin-right: 10px;
-        }
-
-        /* Gallery Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-        .gallery-item {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            border: 2px solid #eee;
-        }
-        .gallery-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 25px rgba(52,152,219,0.2);
-            border-color: #3498db;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-        .gallery-caption {
-            padding: 15px;
-            text-align: center;
-            background: #fafafa;
-            font-weight: 500;
-            color: #2c3e50;
-            border-top: 1px solid #eee;
-        }
-        .gallery-caption i {
-            color: #3498db;
-            margin-right: 6px;
-        }
-
-        /* Footer - HAPUS TEKS */
-        footer {
-            text-align: center;
-            padding: 5px 0;
-            background: #2c3e50;
-            color: white;
-            border-radius: 10px;
-            margin-top: 50px;
-            height: 10px; /* minimal, tanpa konten */
-            opacity: 0; /* disembunyikan sepenuhnya */
-            pointer-events: none;
-            user-select: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: #2c3e50;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 10px 0;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .dropdown-menu {
-                position: static;
-                box-shadow: none;
-                background: transparent;
-                padding: 10px 0 0 20px;
-                max-height: 400px;
-            }
-
-            .dropdown-menu a {
-                color: white;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .dropdown-menu a:hover {
-                background-color: rgba(255, 255, 255, 0.1);
-            }
-
-            .dropdown-avatar {
-                border: 2px solid rgba(255, 255, 255, 0.3);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .class-info {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .info-item {
-                width: 100%;
-            }
-
-            .student-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .student-avatar {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img class="logo-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Logo Kelas">
-                <span class="logo-text">Kelas XI TKJ 2</span>
+                <img class="logo-img" src="gambar/tkj 2.jpg" alt="Logo Kelas">
+                <span class="logo-text">Kelas TKJ 2</span>
             </div>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -666,8 +29,8 @@
                 </li>
                 
                 <li><a href="#" class="nav-link" data-section="wali-kelas"><i class="fas fa-chalkboard-teacher"></i> Wali Kelas</a></li>
-                <li><a href="#" class="nav-link" data-section="structure"><i class="fas fa-sitemap"></i> Struktur</a></li>
-                <li><a href="#" class="nav-link" data-section="all-students"><i class="fas fa-users"></i> Semua Siswa</a></li>
+                <li><a href="#" class="nav-link" data-section="structure"><i class="fas fa-sitemap"></i> Babu</a></li>
+                <li><a href="#" class="nav-link" data-section="all-students"><i class="fas fa-users"></i> Siswa</a></li>
                 <li><a href="#" class="nav-link" data-section="gallery"><i class="fas fa-images"></i> Galeri</a></li>
             </ul>
         </div>
@@ -678,15 +41,15 @@
         <!-- Home Section -->
         <section class="section active" id="home">
             <header>
-                <h1><i class="fas fa-laptop-code"></i> Website Kelas XI TKJ 2</h1>
+                <h1><i class="fas fa-laptop-code"></i> Website Kelas TKJ 2</h1>
                 <p>SELAMAT DATANG DI KELAS TKJ 2</p>
             </header>
 
             <div class="class-info">
                 <div class="info-item">
                     <i class="fas fa-graduation-cap"></i>
-                    <h3>Kelas XI TKJ 2</h3>
-                    <p>Tahun Ajaran 2024-2027</p>
+                    <h3>Kelas TKJ 2</h3>
+                    <p>Tahun 2024-2027</p>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-users"></i>
@@ -709,7 +72,7 @@
                 <div class="action-card" data-section="all-students">
                     <i class="fas fa-users"></i>
                     <h3>Semua Siswa</h3>
-                    <p>Lihat daftar 40 siswa kelas</p>
+                    <p>data 40 siswa kelas</p>
                 </div>
                 <div class="action-card" data-section="wali-kelas">
                     <i class="fas fa-chalkboard-teacher"></i>
@@ -727,45 +90,109 @@
                     <p>Foto perjalanan TKJ 2</p>
                 </div>
             </div>
+
+            <!-- TOMBOL MEDIA SOSIAL -->
+            <h2 style="text-align: center; color: #2c3e50; margin-top: 40px; margin-bottom: 20px;">
+                <i class="fas fa-hashtag"></i> Info lengkap nya bisa kunjungi media sosial kami!
+            </h2>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@tkj2_official" target="_blank" class="social-btn tiktok">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a>
+                <a href="https://www.youtube.com/@TKJ2Channel" target="_blank" class="social-btn youtube">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+                <a href="https://www.instagram.com/miracle_clas?igsh=MWt2cnQ3a2xidmU0aQ==" target="_blank" class="social-btn instagram">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
         </section>
 
         <!-- Wali Kelas Section -->
         <section class="section" id="wali-kelas">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">
-                <i class="fas fa-chalkboard-teacher"></i> Profil Wali Kelas
-            </h2>
-            <div class="wali-container-screenshot">
-                <div class="wali-profile">
-                    <div class="wali-name"><i class="fas fa-user-tie"></i> BU ESTER</div>
-                    <div class="wali-nip">NIP: 198010152005011002</div>
-                    <div class="wali-role">Wali Kelas X TKJ 2</div>
-                    <div class="wali-divider"></div>
-                    <div class="wali-subsection">
-                        <h3><i class="fas fa-graduation-cap"></i> Latar Belakang Pendidikan</h3>
-                        <div class="wali-education-item"><div class="wali-education-title">S1</div><div class="wali-education-desc">Teknik Informatika - UGM (2003)</div></div>
-                        <div class="wali-education-item"><div class="wali-education-title">Sertifikasi</div><div class="wali-education-desc">CCNA, MTCNA</div></div>
+            <!-- Bagian Wali Kelas dengan Foto -->
+            <div class="wali-kelas-container">
+                <h2 class="wali-kelas-title">
+                    <i class="fas fa-chalkboard-teacher"></i> Profil Wali Kelas
+                </h2>
+                
+                <div class="wali-grid">
+                    <!-- Wali Kelas 10: Drs. Ahmad Fauzi -->
+                    <div class="wali-card">
+                        <div class="wali-card-header">
+                            <div class="wali-photo">
+                                <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Drs. Ahmad Fauzi">
+                            </div>
+                            <h3>bu ester</h3>
+                            <div class="wali-nip"></div>
+                            <div class="wali-role-badge">Wali Kelas X TKJ 1</div>
+                        </div>
+                        <div class="wali-card-body">
+                            <div class="wali-info-item">
+                                <div class="label"><i class="fas fa-graduation-cap"></i> </div>
+                                <div class="value"></div>
+                            </div>
+                            <div class="wali-info-item">
+                                <div class="label"><i class="fas fa-book-open"></i> Mata Pelajaran</div>
+                                <div class="value">ilmupengetahuan alam & sosial (IPAS)</div>
+                            </div>
+                            <div class="wali-info-item">
+                                <div class="label"><i class="fas fa-certificate"></i> Gelar</div>
+                                <div class="value">sarjana pendidkan</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="wali-profile">
-                    <div class="wali-name"><i class="fas fa-user-tie"></i> BU ERIN</div>
-                    <div class="wali-nip">NIP: 198205152010012003</div>
-                    <div class="wali-role">Wali Kelas XI TKJ 2 </div>
-                    <div class="wali-divider"></div>
-                    <div class="wali-subsection">
-                        <h3><i class="fas fa-graduation-cap"></i> Latar Belakang Pendidikan</h3>
-                        <div class="wali-education-item"><div class="wali-education-title">S1</div><div class="wali-education-desc">Pendidikan Bahasa Indonesia - UNY (2005)</div></div>
-                        <div class="wali-education-item"><div class="wali-education-title">Sertifikasi</div><div class="wali-education-desc">Google Certified Educator</div></div>
+
+                    <!-- Wali Kelas 11: Muhammad Arifin, S.Kom -->
+                    <div class="wali-card">
+                        <div class="wali-card-header">
+                            <div class="wali-photo">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Muhammad Arifin">
+                            </div>
+                            <h3>bu erin</h3>
+                            <div class="wali-nip"></div>
+                            <div class="wali-role-badge">Wali Kelas XI TKJ 2</div>
+                        </div>
+                        <div class="wali-card-body">
+                            <div class="wali-info-item">
+                                <div class="label"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="value"></div>
+                            </div>
+                            <div class="wali-info-item">
+                                <div class="label"><i class="fas fa-book-open"></i> Mata Pelajaran</div>
+                                <div class="value">Pendidikan Kewarganegaraan (PKN)</div>
+                            </div>
+                            <div class="wali-info-item">
+                                <div class="label"><i class="fas fa-certificate"></i> Gelar</div>
+                                <div class="value">sarjana pendidikan</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="wali-profile">
-                    <div class="wali-name"><i class="fas fa-user-tie"></i> - </div>
-                    <div class="wali-nip">NIP: 198503122015012004</div>
-                    <div class="wali-role">Wali Kelas XII TKJ 2</div>
-                    <div class="wali-divider"></div>
-                    <div class="wali-subsection">
-                        <h3><i class="fas fa-graduation-cap"></i> Latar Belakang Pendidikan</h3>
-                        <div class="wali-education-item"><div class="wali-education-title">S1</div><div class="wali-education-desc">Teknik Informatika - ITB (2007)</div></div>
-                        <div class="wali-education-item"><div class="wali-education-title">S2</div><div class="wali-education-desc">Magister Ilmu Komputer - UI (2012)</div></div>
+
+                    <!-- Wali Kelas 12: Rina Marlina, M.Kom -->
+                    <div class="wali-card">
+                        <div class="wali-card-header">
+                            <div class="wali-photo">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Rina Marlina">
+                            </div>
+                            <h3>-</h3>
+                            <div class="wali-nip"></div>
+                            <div class="wali-role-badge">Wali Kelas XII TKJ 3</div>
+                        </div>
+                        <div class="wali-card-body">
+                            <div class="wali-info-item">
+                                <div class="label"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="value"></div>
+                            </div>
+                            <div class="wali-info-item">
+                                <div class="label"><i class="fas fa-book-open"></i> Mata Pelajaran</div>
+                                <div class="value"></div>
+                            </div>
+                            <div class="wali-info-item">
+                                <div class="label"><i class="fas fa-certificate"></i> Gelar</div>
+                                <div class="value"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -830,13 +257,125 @@
 
         <!-- Gallery Section -->
         <section class="section" id="gallery">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;"><i class="fas fa-images"></i> Memori kelas TKJ 2</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;"><i class="fas fa-images"></i>beberapa Memori kelas TKJ 2</h2>
             <div class="wali-container-screenshot">
                 <div class="gallery-grid">
-                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400&h=300&fit=crop"><div class="gallery-caption"><i class="fas fa-network-wired"></i> Crimping</div></div>
-                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop"><div class="gallery-caption"><i class="fas fa-server"></i> Server</div></div>
-                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop"><div class="gallery-caption"><i class="fas fa-code"></i> Coding</div></div>
-                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop"><div class="gallery-caption"><i class="fas fa-laptop"></i> Lab</div></div>
+                    <div class="gallery-item"><img src="tkj 2/1.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/2.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/3.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/4.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/5.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/6.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/7.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/8.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/9.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/10.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/11.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/12.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/13.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/14.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/15.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/16.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/17.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/18.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/19.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/20.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/21.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/22.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/23.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/24.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/25.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/26.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/27.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/28.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/29.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/30.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/31.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/32.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/33.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/34.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/35.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/36.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/37.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/38.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/39.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/40.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/41.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/42.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/43.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/44.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/45.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/46.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/47.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/48.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/49.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/50.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/51.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/52.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/53.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/54.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/55.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/56.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/57.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/58.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/59.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/60.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/61.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/62.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/63.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/64.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/65.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/66.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/67.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/68.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/69.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/70.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/71.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/72.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/73.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/74.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/75.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/76.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/77.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/78.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/79.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/80.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/81.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/82.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/83.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/84.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/85.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/86.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/87.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/88.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/89.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/90.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/91.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/92.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/93.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/94.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/95.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/96.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/97.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/98.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/99.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/100.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/101.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/102.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/103.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/104.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/105.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/106.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/107.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/108.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/109.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/110.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/111.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/112.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/113.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/114.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/115.jpeg"><div class="gallery-caption"> </div></div>
+                    <div class="gallery-item"><img src="tkj 2/116.jpeg"><div class="gallery-caption"> </div></div>
                 </div>
             </div>
         </section>
@@ -848,46 +387,46 @@
     <script>
         // 40 DATA SISWA (nama, tanggal lahir, telepon, alamat)
         const studentsData = [
-            {id:1, name:"FOIRENT FEBRIANTY", gender:"perempuan", birthDate:"03 Februari 2009", phone:"0812-3456-7890", address:"Jl. Merdeka No. 123, Jakarta", avatar:"https://randomuser.me/api/portraits/men/1.jpg"},
-            {id:2, name:"FITO AZKA WIRADANA", gender:"laki-laki", birthDate:"09 April 2009", phone:"0813-9876-5432", address:"Jl. Sudirman No. 45, Bandung", avatar:"https://randomuser.me/api/portraits/women/1.jpg"},
-            {id:3, name:"GALANG FERDIANTO", gender:"laki-laki", birthDate:"04 November 2008", phone:"0815-4321-6789", address:"Jl. Pemuda No. 78, Surabaya", avatar:"https://randomuser.me/api/portraits/women/2.jpg"},
-            {id:4, name:"GALANG SAKTIAWAN", gender:"Laki-laki", birthDate:"22 Mei 2008", phone:"0819-0123-4567", address:"Jl. Malioboro No. 89, Yogyakarta", avatar:"https://randomuser.me/api/portraits/men/2.jpg"},
-            {id:5, name:"GIANT EVO ARIANTO", gender:"Laki-laki", birthDate:"09 Desember 2008", phone:"0831-2345-6789", address:"Jl. Gajah Mada No. 34, Semarang", avatar:"https://randomuser.me/api/portraits/men/3.jpg"},
-            {id:6, name:"HANIEFUL FEBRIANSAH", gender:"Laki-laki", birthDate:"16 Februari 2008", phone:"0857-8901-2345", address:"Jl. Gatot Subroto No. 67, Medan", avatar:"https://randomuser.me/api/portraits/women/3.jpg"},
-            {id:7, name:"HEFDZIL AKBAR", gender:"Laki-laki", birthDate:"12 juli 2009", phone:"0823-4567-8901", address:"Jl. Urip Sumoharjo No. 12, Makassar", avatar:"https://randomuser.me/api/portraits/men/4.jpg"},
-            {id:8, name:"HELSA INDNAZIL ARSY", gender:"Perempuan", birthDate:"02 mei 2008", phone:"0829-0123-4567", address:"Jl. Ijen No. 11, Malang", avatar:"https://randomuser.me/api/portraits/women/4.jpg"},
-            {id:9, name:"IPAN MAULANA", gender:"Laki-laki", birthDate:"16 Oktober 2008", phone:"0827-8901-2345", address:"Jl. Jenderal Sudirman No. 23, Palembang", avatar:"https://randomuser.me/api/portraits/men/5.jpg"},
-            {id:10, name:"JAY ADITYA MAHOTRA", gender:"Laki-laki", birthDate:"25 November 2008", phone:"0825-6789-0123", address:"Jl. Raya Kuta No. 88, Bali", avatar:"https://randomuser.me/api/portraits/women/5.jpg"},
-            {id:11, name:"JELITA KEYZA MAHARANI", gender:"Perempuan", birthDate:"04 Mei 2009", phone:"0835-6789-0123", address:"Jl. Wolter Monginsidi No. 33, Lampung", avatar:"https://randomuser.me/api/portraits/men/6.jpg"},
-            {id:12, name:"JESSICA ANASTASYA OKTAFIANA", gender:"Perempuan", birthDate:"27 Oktober 2008", phone:"0837-8901-2345", address:"Jl. Pangeran Antasari No. 56, Banjarmasin", avatar:"https://randomuser.me/api/portraits/women/7.jpg"},
-            {id:13, name:"JOKO SATRIO", gender:"Laki-laki", birthDate:"25 Mei 2008", phone:"0839-0123-4567", address:"Jl. Sam Ratulangi No. 22, Manado", avatar:"https://randomuser.me/api/portraits/men/8.jpg"},
-            {id:14, name:"JONATAN KRISTIAN", gender:"Laki-laki", birthDate:"18 Juli 2008", phone:"0841-2345-6789", address:"Jl. Gajah Mada No. 77, Pontianak", avatar:"https://randomuser.me/api/portraits/men/9.jpg"},
-            {id:15, name:"JOVAN CORNELY", gender:"Laki-laki", birthDate:"15 Maret 2009", phone:"0843-4567-8901", address:"Jl. Imam Bonjol No. 34, Padang", avatar:"https://randomuser.me/api/portraits/men/10.jpg"},
-            {id:16, name:"KEYRA AQEELA PUTRI NOVIA", gender:"Perempuan", birthDate:"25 Mei 2009", phone:"0845-6789-0123", address:"Jl. Jenderal Sudirman No. 99, Balikpapan", avatar:"https://randomuser.me/api/portraits/women/13.jpg"},
-            {id:17, name:"KRISTIYA ANDARAKASIH", gender:"Perempuan", birthDate:"25 Agustus 2009", phone:"0847-8901-2345", address:"Jl. Awang Long No. 12, Samarinda", avatar:"https://randomuser.me/api/portraits/men/12.jpg"},
-            {id:18, name:"LEITO PRATAMA PUTRA", gender:"Laki-laki", birthDate:"18 Januari 2009", phone:"0849-0123-4567", address:"Jl. Diponegoro No. 45, Pekanbaru", avatar:"https://randomuser.me/api/portraits/men/13.jpg"},
-            {id:19, name:"LUSIANA ARISTIANTY KUSUMA DEWI", gender:"Perempuan", birthDate:"05 Februari 2009", phone:"0853-4567-8901", address:"Jl. Siliwangi No. 34, Cirebon", avatar:"https://randomuser.me/api/portraits/women/6.jpg"},
-            {id:20, name:"(ALMARHUN) M. ARIFIN ROZAK", gender:"Laki-laki", birthDate:"26 Juli 2008", phone:"0851-2345-6789", address:"Jl. Yos Sudarso No. 23, Surakarta", avatar:"https://randomuser.me/api/portraits/women/7.jpg"},
-            {id:21, name:"M. PARAMA MAHAPUTRA ROKHIM", gender:"Laki-laki", birthDate:"03 Februari 2009", phone:"0855-6789-0123", address:"Jl. Merdeka No. 56, Tegal", avatar:"https://randomuser.me/api/portraits/women/8.jpg"},
-            {id:22, name:"MANDA HARTIKA", gender:"Perempuan", birthDate:"10 Agustus 2008", phone:"0873-4567-8901", address:"Jl. Raya Darmo No. 45, Surabaya", avatar:"https://randomuser.me/api/portraits/men/14.jpg"},
-            {id:23, name:"MARGARET CANTIKA", gender:"Perempuan", birthDate:"04 Agustus 2009", phone:"0875-6789-0123", address:"Jl. Kawi No. 23, Malang", avatar:"https://randomuser.me/api/portraits/women/9.jpg"},
-            {id:24, name:"MARVEL SETIA PERDANA", gender:"Laki-laki", birthDate:"15 Maret 2008", phone:"0877-8901-2345", address:"Jl. Thamrin No. 89, Jakarta", avatar:"https://randomuser.me/api/portraits/men/15.jpg"},
-            {id:25, name:"MARVEL SURYA ATMAJA", gender:"Laki-laki", birthDate:"12 Maret 2009", phone:"0879-0123-4567", address:"Jl. Cihampelas No. 12, Bandung", avatar:"https://randomuser.me/api/portraits/women/10.jpg"},
-            {id:26, name:"MELVIANA MILLYANA PUTRI ARIFTI", gender:"Perempuan", birthDate:"24 Mei 2008", phone:"0881-2345-6789", address:"Jl. Solo No. 34, Yogyakarta", avatar:"https://randomuser.me/api/portraits/women/12.jpg"},
-            {id:27, name:"MOH. ILHAM AL-FARUQ", gender:"Laki-laki", birthDate:"06 November 2008", phone:"0883-4567-8901", address:"Jl. Pandanaran No. 56, Semarang", avatar:"https://randomuser.me/api/portraits/women/11.jpg"},
-            {id:28, name:"MOH. NURIL ARIFIN", gender:"Laki-laki", birthDate:"22 Mei 2008", phone:"0885-6789-0123", address:"Jl. Raya Kupang No. 78, Surabaya", avatar:"https://randomuser.me/api/portraits/men/17.jpg"},
-            {id:29, name:"MOHAMMAD KAKA ILHAM NUDIN", gender:"Laki-laki", birthDate:"10 Maret 2008", phone:"0887-8901-2345", address:"Jl. SM Raja No. 45, Medan", avatar:"https://randomuser.me/api/portraits/women/12.jpg"},
-            {id:30, name:"MOHAMMAD FARDAN ZAKI ARIAN SAPUTRA", gender:"Laki-laki", birthDate:"05 Mei 2008", phone:"0889-0123-4567", address:"Jl. Urip Sumoharjo No. 67, Makassar", avatar:"https://randomuser.me/api/portraits/men/18.jpg"},
-            {id:31, name:"MUH. RENDY SAPUTRA", gender:"Laki-laki", birthDate:"05 Januari 2008", phone:"0891-2345-6789", address:"Jl. Pajajaran No. 33, Bogor", avatar:"https://randomuser.me/api/portraits/men/19.jpg"},
-            {id:32, name:"MUHAMMAD ILHAM ULINUHA FADIL", gender:"Laki-laki", birthDate:"14 Agustus 2008", phone:"0893-4567-8901", address:"Jl. Diponegoro No. 44, Denpasar", avatar:"https://randomuser.me/api/portraits/women/13.jpg"},
-            {id:33, name:"MUHAMMAD AGUS BAHTIAR", gender:"Laki-laki", birthDate:"16 Maret 2009", phone:"0895-6789-0123", address:"Jl. MT Haryono No. 55, Balikpapan", avatar:"https://randomuser.me/api/portraits/men/20.jpg"},
-            {id:34, name:"MUHAMMAD AKBAR MAULANA", gender:"Laki-laki", birthDate:"29 Desember 2008", phone:"0897-8901-2345", address:"Jl. Slamet Riyadi No. 66, Solo", avatar:"https://randomuser.me/api/portraits/women/14.jpg"},
-            {id:35, name:"MUHAMMAD NASRUL MUKMIN", gender:"Laki-laki", birthDate:"3 Juli 2008", phone:"0899-0123-4567", address:"Jl. Kartini No. 77, Cirebon", avatar:"https://randomuser.me/api/portraits/men/21.jpg"},
-            {id:36, name:"MUHAMMAD ZAENAL", gender:"Laki-laki", birthDate:"08 Agustus 2008", phone:"0901-2345-6789", address:"Jl. Wolter Monginsidi No. 88, Bandar Lampung", avatar:"https://randomuser.me/api/portraits/women/15.jpg"},
-            {id:37, name:"MUHAMMAD ZAKY IRJA NA'IM", gender:"Laki-laki", birthDate:"22 Februari 2009", phone:"0903-4567-8901", address:"Jl. A. Yani No. 21, Banjarmasin", avatar:"https://randomuser.me/api/portraits/men/22.jpg"},
-            {id:38, name:"NADINE KEYSHA ALIVIA", gender:"Perempuan", birthDate:"20 Oktober 2008", phone:"0904-5678-9012", address:"Jl. Diponegoro No. 32, Manado", avatar:"https://randomuser.me/api/portraits/women/16.jpg"},
-            {id:39, name:"NAFINSA RESIACA PUTRI", gender:"Perempuan", birthDate:"14 Mei 2009", phone:"0905-6789-0123", address:"Jl. Sudirman No. 73, Palembang", avatar:"https://randomuser.me/api/portraits/women/17.jpg"},
-            {id:40, name:"NAFISHA SALSABILA WAHYUNINGTYAS", gender:"Perempuan", birthDate:"04 November 2008", phone:"0906-7890-1234", address:"Jl. Merapi No. 14, Yogyakarta", avatar:"https://randomuser.me/api/portraits/women/18.jpg"}
+            {id:1, name:"FOIRENT FEBRIANTY", gender:"perempuan", birthDate:"03 Februari 2009", phone:"-", address:"-", avatar:"gambar/fio.jpeg"},
+            {id:2, name:"FITO AZKA WIRADANA", gender:"laki-laki", birthDate:"09 April 2009", phone:"-", address:"-", avatar:"gambar/fito.jpeg"},
+            {id:3, name:"GALANG FERDIANTO", gender:"laki-laki", birthDate:"04 November 2008", phone:"-", address:"-", avatar:"gambar/galfer.jpeg"},
+            {id:4, name:"GALANG SAKTIAWAN", gender:"Laki-laki", birthDate:"22 Mei 2008", phone:"-", address:"-", avatar:"gambar/galsak.jpeg"},
+            {id:5, name:"GIANT EVO ARIANTO", gender:"Laki-laki", birthDate:"09 Desember 2008", phone:"-", address:"-", avatar:"gambar/neo.jpeg"},
+            {id:6, name:"HANIEFUL FEBRIANSAH", gender:"Laki-laki", birthDate:"16 Februari 2008", phone:"-", address:"-", avatar:"gambar/hanip.jpeg"},
+            {id:7, name:"HEFDZIL AKBAR", gender:"Laki-laki", birthDate:"12 juli 2009", phone:"-", address:"-", avatar:"gambar/hefdzil.jpeg"},
+            {id:8, name:"HELSA INDNAZIL ARSY", gender:"Perempuan", birthDate:"02 mei 2008", phone:"-", address:"-", avatar:"gambar/helsa.jpeg"},
+            {id:9, name:"IPAN MAULANA", gender:"Laki-laki", birthDate:"16 Oktober 2008", phone:"-", address:"-", avatar:"gambar/ipan.jpeg"},
+            {id:10, name:"JAY ADITYA MAHOTRA", gender:"Laki-laki", birthDate:"25 November 2008", phone:"-", address:"-", avatar:"gambar/jay.jpeg"},
+            {id:11, name:"JELITA KEYZA MAHARANI", gender:"Perempuan", birthDate:"04 Mei 2009", phone:"-", address:"- ", avatar:'gambar/jelita.jpeg'},
+            {id:12, name:'JESSICA ANASTASYA OKTAFIANA', gender:'Perempuan', birthDate:'27 Oktober 2008', phone:'-', address:'-', avatar:'gambar/jesica.jpeg'},
+            {id:13, name:'JOKO SATRIO', gender:'Laki-laki', birthDate:'25 Mei 2008', phone:'-', address:'-', avatar:'gambar/joko.jpeg'},
+            {id:14, name:'JONATAN KRISTIAN', gender:'Laki-laki', birthDate:'18 Juli 2008', phone:'-', address:'-', avatar:'gambar/jonatan.jpeg'},
+            {id:15, name:'JOVAN CORNELY', gender:'Laki-laki', birthDate:'15 Maret 2009', phone:'-', address:'-', avatar:'gambar/jovan.jpeg'},
+            {id:16, name:"KEYRA AQEELA PUTRI NOVIA", gender:"Perempuan", birthDate:"25 Mei 2009", phone:"-", address:"- ", avatar:'gambar/keyra.jpeg'},
+            {id:17, name:"KRISTIYA ANDARAKASIH", gender:"Perempuan", birthDate:"25 Agustus 2009", phone:"-", address:"-", avatar:"gambar/kris.jpeg"},
+            {id:18, name:"LEITO PRATAMA PUTRA", gender:"Laki-laki", birthDate:"18 Januari 2009", phone:"-", address:"-", avatar:"gambar/leito.jpeg"},
+            {id:19, name:"LUSIANA ARISTIANTY KUSUMA DEWI", gender:"Perempuan", birthDate:"05 Februari 2009", phone:"-", address:"-", avatar:"gambar/lusiana.jpeg"},
+            {id:20, name:"(#ALMARHUN#) M. ARIFIN ROZAK", gender:"Laki-laki", birthDate:"26 Juli 2008", phone:"-", address:"-", avatar:"gambar/ripin.jpeg"},
+            {id:21, name:"M. PARAMA MAHAPUTRA ROKHIM", gender:"Laki-laki", birthDate:"03 Februari 2009", phone:"-", address:"-", avatar:'gambar/parama.jpeg'},
+            {id:22, name:"MANDA HARTIKA", gender:"Perempuan", birthDate:'10 Agustus 2008', phone:'-', address:'-', avatar:'gambar/manda.jpeg'},
+            {id:23, name:'MARGARET CANTIKA', gender:'Perempuan', birthDate:'04 Agustus 2009', phone:'-', address:'-', avatar:'gambar/margaret.jpeg'},
+            {id:24, name:'MARVEL SETIA PERDANA', gender:'Laki-laki', birthDate:'15 Maret 2008', phone:'-', address:'-', avatar:'gambar/marvel.jpeg'},
+            {id:25, name:"MARVEL SURYA ATMAJA ", gender:'Laki-laki', birthDate:'12 Maret 2009', phone:'-', address:'-', avatar:'gambar/mansur.jpg'},
+            {id:26, name:'MELVIANA MILLYANA PUTRI ARIFTI', gender:'Perempuan', birthDate:'24 Mei 2008', phone:'-', address:'-', avatar:'gambar/melvi.jpg'},
+            {id:27, name:"MOH. ILHAM AL-FARUQ", gender:"Laki-laki", birthDate:"06 November 2008", phone:"-", address:"-", avatar:"gambar/faruq.jpeg"},
+            {id:28, name:"MOH. NURIL ARIFIN", gender:"Laki-laki", birthDate:"22 Mei 2008", phone:"-", address:"-", avatar:"gambar/nuril.jpeg"},
+            {id:29, name:"MOHAMMAD KAKA ILHAM NUDIN", gender:"Laki-laki", birthDate:"10 Maret 2008", phone:"-", address:"-", avatar:"gambar/kaka.jpeg"},
+            {id:30, name:"MOHAMMAD FARDAN ZAKI ARIAN SAPUTRA", gender:"Laki-laki", birthDate:"05 Mei 2008", phone:"-", address:"-", avatar:"gambar/fardan.jpeg"},
+            {id:31, name:"MUH. RENDY SAPUTRA", gender:"Laki-laki", birthDate:"05 Januari 2008", phone:"-", address:"-", avatar:"gambar/rendy.jpeg"},
+            {id:32, name:"MUHAMMAD ILHAM ULINUHA FADIL", gender:"Laki-laki", birthDate:"14 Agustus 2008", phone:"-", address:"-", avatar:"gambar/ulin.jpeg"},
+            {id:33, name:"MUHAMMAD AGUS BAHTIAR", gender:"Laki-laki", birthDate:"16 Maret 2009", phone:"-", address:"-", avatar:"gambar/agus.jpeg"},
+            {id:34, name:"MUHAMMAD AKBAR MAULANA", gender:"Laki-laki", birthDate:"29 Desember 2008", phone:"-", address:"-", avatar:"gambar/akbar.jpeg"},
+            {id:35, name:"MUHAMMAD NASRUL MUKMIN", gender:"Laki-laki", birthDate:"3 Juli 2008", phone:"- ", address:'-', avatar:'gambar/nasrul.jpeg'},
+            {id:36, name:'MUHAMMAD ZAENAL', gender:'Laki-laki', birthDate:'08 Agustus 2008', phone:'-', address:'-', avatar:'gambar/zaenal.jpeg'},
+            {id:37, name:'MUHAMMAD ZAKY IRJA NA\'IM', gender:'Laki-laki', birthDate:'22 Februari 2009', phone:'-', address:'-', avatar:'gambar/zaky.jpeg'},
+            {id:38, name:'NADINE KEYSHA ALIVIA', gender:'Perempuan', birthDate:'20 Oktober 2008', phone:'-', address:'-', avatar:'gambar/nadin.jpeg'},
+            {id:39, name:'NAFINSA RESIACA PUTRI', gender:'Perempuan', birthDate:'14 Mei 2009', phone:'-', address:'-', avatar:'gambar/nafinsa.jpeg'},
+            {id:40, name:'NAFISHA SALSABILA WAHYUNINGTYAS', gender:'Perempuan', birthDate:'04 November 2008', phone:'-', address:'-', avatar:'gambar/nafisha.jpeg'}
         ];
 
         // Mobile menu
