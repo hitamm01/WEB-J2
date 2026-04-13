@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website TKJ 2</title>
+    <title> TKJ 2</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -32,6 +32,7 @@
                 <li><a href="#" class="nav-link" data-section="structure"><i class="fas fa-sitemap"></i> Babu</a></li>
                 <li><a href="#" class="nav-link" data-section="all-students"><i class="fas fa-users"></i> Siswa</a></li>
                 <li><a href="#" class="nav-link" data-section="gallery"><i class="fas fa-images"></i> Galeri</a></li>
+                <li><a href="#" class="nav-link" data-section="comments"><i class="fas fa-comments"></i> Komentar</a></li>
             </ul>
         </div>
     </nav>
@@ -214,42 +215,100 @@
         <!-- Student Profile Section (detail sederhana) -->
         <section class="section" id="student-profile"></section>
 
+        <!-- Comments to Admin Section -->
+        <section class="section" id="comments">
+            <div class="comments-container">
+                <div class="comments-header">
+                    <h2 style="color: #0f172a; font-size: 2.2rem; margin-bottom: 12px;">
+                        <i class="fas fa-comments" style="color: #3b82f6; margin-right: 12px;"></i>Komentar ke Admin
+                    </h2>
+                    <p style="color: #475569; font-size: 1rem;">
+                        Tulis pesan Anda dan kirim langsung ke WhatsApp admin
+                    </p>
+                </div>
+
+                <form id="commentsForm" class="comments-form-simple">
+                    <textarea id="commentMessage" name="commentMessage" class="form-textarea-simple" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                    <button type="submit" class="submit-btn-simple">
+                        <i class="fab fa-whatsapp"></i> Kirim ke Admin
+                    </button>
+                </form>
+            </div>
+        </section>
+
         <!-- Structure Section -->
         <section class="section" id="structure">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">
+            <h2 style="text-align: center; margin-bottom: 40px; color: #2c3e50;">
                 <i class="fas fa-sitemap"></i> Struktur Kelas XI TKJ 2
             </h2>
-            <div class="wali-container-screenshot">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                    <!-- Ketua -->
-                    <div class="detail-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #f1c40f;">
-                        <h3 style="display: flex; align-items: center; gap: 10px; color: #2c3e50;"><i class="fas fa-crown" style="color: #f1c40f;"></i> Ketua</h3>
-                        <div style="font-size: 1.1rem; padding-left: 30px;">MUHAMMAD NURIL ARIFIN</div>
+            
+            <div class="structure-tree">
+                <!-- Top Level: Ketua & Wakil Ketua -->
+                <div class="tree-level top-level">
+                    <div class="tree-member ketua-member">
+                        <img src="tkj2/nuril.jpeg" alt="MUHAMMAD NURIL ARIFIN" class="member-thumb">
+                        <div class="member-box ketua-box">
+                            <div class="member-position">Ketua Kelas</div>
+                            <div class="member-fullname">MUHAMMAD NURIL ARIFIN</div>
+                        </div>
                     </div>
-                    <!-- Wakil Ketua -->
-                    <div class="detail-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #3498db;">
-                        <h3 style="display: flex; align-items: center; gap: 10px; color: #2c3e50;"><i class="fas fa-user-tie" style="color: #3498db;"></i> Wakil Ketua</h3>
-                        <div style="font-size: 1.1rem; padding-left: 30px;">MUHAMMAD NASRUL MUKMIN</div>
+
+                    <div class="tree-member wakil-member">
+                        <img src="tkj2/nasrul.jpeg" alt="MUHAMMAD NASRUL MUKMIN" class="member-thumb">
+                        <div class="member-box wakil-box">
+                            <div class="member-position">Wakil Ketua</div>
+                            <div class="member-fullname">MUHAMMAD NASRUL MUKMIN</div>
+                        </div>
                     </div>
-                    <!-- Bendahara 1 -->
-                    <div class="detail-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #27ae60;">
-                        <h3 style="display: flex; align-items: center; gap: 10px; color: #2c3e50;"><i class="fas fa-coins" style="color: #27ae60;"></i> Bendahara 1</h3>
-                        <div style="font-size: 1.1rem; padding-left: 30px;">NAFISHA SALSABILA WAHYUNINGTYAS</div>
+                </div>
+
+                <!-- Connecting line between levels -->
+                <div class="tree-connector">
+                    <div class="connector-line vertical"></div>
+                    <div class="connector-line horizontal"></div>
+                </div>
+
+                <!-- Middle Level: Sekretaris 1 & 2 -->
+                <div class="tree-level middle-level">
+                    <div class="tree-member sekretaris-member">
+                        <img src="tkj2/lusiana.jpeg" alt="LUSIANA" class="member-thumb">
+                        <div class="member-box sekretaris-box">
+                            <div class="member-position">Sekretaris 1</div>
+                            <div class="member-fullname">LUSIANA ARISTIANTY K. D.</div>
+                        </div>
                     </div>
-                    <!-- Bendahara 2 -->
-                    <div class="detail-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #27ae60;">
-                        <h3 style="display: flex; align-items: center; gap: 10px; color: #2c3e50;"><i class="fas fa-coins" style="color: #27ae60;"></i> Bendahara 2</h3>
-                        <div style="font-size: 1.1rem; padding-left: 30px;">JONATAN KRISTIAN</div>
+
+                    <div class="tree-member sekretaris-member">
+                        <img src="tkj2/fito.jpeg" alt="FITO" class="member-thumb">
+                        <div class="member-box sekretaris-box">
+                            <div class="member-position">Sekretaris 2</div>
+                            <div class="member-fullname">FITO AZKA WIRADANA</div>
+                        </div>
                     </div>
-                    <!-- Sekretaris 1 -->
-                    <div class="detail-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #e67e22;">
-                        <h3 style="display: flex; align-items: center; gap: 10px; color: #2c3e50;"><i class="fas fa-book" style="color: #e67e22;"></i> Sekretaris 1</h3>
-                        <div style="font-size: 1.1rem; padding-left: 30px;">LUSIANA ARISTIANTY KUSUMA DEWI</div>
+                </div>
+
+                <!-- Connecting line between levels -->
+                <div class="tree-connector">
+                    <div class="connector-line vertical"></div>
+                    <div class="connector-line horizontal"></div>
+                </div>
+
+                <!-- Bottom Level: Bendahara 1 & 2 -->
+                <div class="tree-level bottom-level">
+                    <div class="tree-member bendahara-member">
+                        <img src="tkj2/nafisha.jpeg" alt="NAFISHA" class="member-thumb">
+                        <div class="member-box bendahara-box">
+                            <div class="member-position">Bendahara 1</div>
+                            <div class="member-fullname">NAFISHA SALSABILA W.</div>
+                        </div>
                     </div>
-                    <!-- Sekretaris 2 -->
-                    <div class="detail-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #e67e22;">
-                        <h3 style="display: flex; align-items: center; gap: 10px; color: #2c3e50;"><i class="fas fa-book" style="color: #e67e22;"></i> Sekretaris 2</h3>
-                        <div style="font-size: 1.1rem; padding-left: 30px;">FITO AZKA WIRADANA</div>
+
+                    <div class="tree-member bendahara-member">
+                        <img src="tkj2/jonatan.jpeg" alt="JONATAN" class="member-thumb">
+                        <div class="member-box bendahara-box">
+                            <div class="member-position">Bendahara 2</div>
+                            <div class="member-fullname">JONATAN KRISTIAN</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -260,7 +319,13 @@
             <div class="galeri-container">
                 <h2 class="galeri-title">
                     <i class="fas fa-images"></i> Galeri Memori TKJ 2
+                    <button id="easterEggBtn" style="opacity: 0.12; font-size: 0.8rem; padding: 2px 6px; border: 1px solid transparent; background: none; cursor: pointer; color: #64748b; transition: opacity 0.3s; margin-left: 10px;" title="🥚">🥚</button>
                 </h2>
+                
+                <div style="margin-bottom: 25px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <input type="text" id="gallerySearch" placeholder="🔍 Cari foto berdasarkan nomor atau kata kunci..." style="flex: 1; min-width: 200px; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 20px; font-size: 0.95rem; transition: all 0.3s ease;" />
+                    <button id="clearSearchBtn" style="padding: 10px 20px; background: #e2e8f0; border: none; border-radius: 20px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Bersihkan</button>
+                </div>
                 
                 <div class="galeri-grid" id="galeriGrid">
                     <!-- Item galeri akan diisi oleh JavaScript -->
@@ -285,48 +350,48 @@
     </div>
 
     <script>
-        // 40 DATA SISWA (nama, tanggal lahir, telepon, alamat)
+        // 40 DATA SISWA (nama, tanggal lahir, telepon, alamat, instagram, gelar)
         const studentsData = [
-            {id:1, name:"FOIRENT FEBRIANTY", gender:"perempuan", birthDate:"03 Februari 2009", phone:"-", address:"runah bapak budi", avatar:"tkj2/fio.jpeg"},
-            {id:2, name:"FITO AZKA WIRADANA", gender:"laki-laki", birthDate:"09 April 2009", phone:"-", address:"-", avatar:"tkj2/fito.jpeg"},
-            {id:3, name:"GALANG FERDIANTO", gender:"laki-laki", birthDate:"04 November 2008", phone:"-", address:"-", avatar:"tkj2/galfer.jpeg"},
-            {id:4, name:"GALANG SAKTIAWAN", gender:"Laki-laki", birthDate:"22 Mei 2008", phone:"-", address:"-", avatar:"tkj2/galsak.jpeg"},
-            {id:5, name:"GIANT EVO ARIANTO", gender:"Laki-laki", birthDate:"09 Desember 2008", phone:"-", address:"-", avatar:"tkj2/neo.jpeg"},
-            {id:6, name:"HANIEFUL FEBRIANSAH", gender:"Laki-laki", birthDate:"16 Februari 2008", phone:"-", address:"-", avatar:"tkj2/hanip.jpeg"},
-            {id:7, name:"HEFDZIL AKBAR", gender:"Laki-laki", birthDate:"12 juli 2009", phone:"-", address:"-", avatar:"tkj2/hefdzil.jpeg"},
-            {id:8, name:"HELSA INDNAZIL ARSY", gender:"Perempuan", birthDate:"02 mei 2008", phone:"-", address:"-", avatar:"tkj2/helsa.jpeg"},
-            {id:9, name:"IPAN MAULANA", gender:"Laki-laki", birthDate:"16 Oktober 2008", phone:"-", address:"-", avatar:"tkj2/ipan.jpeg"},
-            {id:10, name:"JAY ADITYA MAHOTRA", gender:"Laki-laki", birthDate:"25 November 2008", phone:"-", address:"-", avatar:"tkj2/jay.jpeg"},
-            {id:11, name:"JELITA KEYZA MAHARANI", gender:"Perempuan", birthDate:"04 Mei 2009", phone:"-", address:"- ", avatar:'tkj2/jelita.jpeg'},
-            {id:12, name:'JESSICA ANASTASYA OKTAFIANA', gender:'Perempuan', birthDate:'27 Oktober 2008', phone:'-', address:'-', avatar:'tkj2/jesica.jpeg'},
-            {id:13, name:'JOKO SATRIO', gender:'Laki-laki', birthDate:'25 Mei 2008', phone:'-', address:'-', avatar:'tkj2/joko.jpeg'},
-            {id:14, name:'JONATAN KRISTIAN', gender:'Laki-laki', birthDate:'18 Juli 2008', phone:'-', address:'-', avatar:'tkj2/jonatan.jpeg'},
-            {id:15, name:'JOVAN CORNELY', gender:'Laki-laki', birthDate:'15 Maret 2009', phone:'-', address:'-', avatar:'tkj2/jovan.jpeg'},
-            {id:16, name:"KEYRA AQEELA PUTRI NOVIA", gender:"Perempuan", birthDate:"25 Mei 2009", phone:"-", address:"- ", avatar:'tkj2/keyra.jpeg'},
-            {id:17, name:"KRISTIYA ANDARAKASIH", gender:"Perempuan", birthDate:"25 Agustus 2009", phone:"-", address:"-", avatar:"tkj2/kris.jpeg"},
-            {id:18, name:"LEITO PRATAMA PUTRA", gender:"Laki-laki", birthDate:"18 Januari 2009", phone:"-", address:"-", avatar:"tkj2/leito.jpeg"},
-            {id:19, name:"LUSIANA ARISTIANTY KUSUMA DEWI", gender:"Perempuan", birthDate:"05 Februari 2009", phone:"-", address:"-", avatar:"tkj2/lusiana.jpeg"},
-            {id:20, name:"(#ALMARHUN#) M. ARIFIN ROZAK", gender:"Laki-laki", birthDate:"26 Juli 2008", phone:"-", address:"-", avatar:"tkj2/ripin.jpeg"},
-            {id:21, name:"M. PARAMA MAHAPUTRA ROKHIM", gender:"Laki-laki", birthDate:"03 Februari 2009", phone:"-", address:"-", avatar:'tkj2/parama.jpeg'},
-            {id:22, name:"MANDA HARTIKA", gender:"Perempuan", birthDate:'10 Agustus 2008', phone:'-', address:'-', avatar:'tkj2/manda.jpeg'},
-            {id:23, name:'MARGARET CANTIKA', gender:'Perempuan', birthDate:'04 Agustus 2009', phone:'-', address:'-', avatar:'tkj2/margaret.jpeg'},
-            {id:24, name:'MARVEL SETIA PERDANA', gender:'Laki-laki', birthDate:'15 Maret 2008', phone:'-', address:'-', avatar:'tkj2/marvel.jpeg'},
-            {id:25, name:"MARVEL SURYA ATMAJA ", gender:'Laki-laki', birthDate:'12 Maret 2009', phone:'-', address:'-', avatar:'tkj2/mansur.jpeg'},
-            {id:26, name:'MELVIANA MILLYANA PUTRI ARIFTI', gender:'Perempuan', birthDate:'24 Mei 2008', phone:'-', address:'-', avatar:'tkj2/melvi.jpeg'},
-            {id:27, name:"MOH. ILHAM AL-FARUQ", gender:"Laki-laki", birthDate:"06 November 2008", phone:"-", address:"-", avatar:"tkj2/faruq.jpeg"},
-            {id:28, name:"MOH. NURIL ARIFIN", gender:"Laki-laki", birthDate:"22 Mei 2008", phone:"-", address:"-", avatar:"tkj2/nuril.jpeg"},
-            {id:29, name:"MOHAMMAD KAKA ILHAM NUDIN", gender:"Laki-laki", birthDate:"10 Maret 2008", phone:"-", address:"-", avatar:"tkj2/kaka.jpeg"},
-            {id:30, name:"MOHAMMAD FARDAN ZAKI ARIAN SAPUTRA", gender:"Laki-laki", birthDate:"05 Mei 2008", phone:"-", address:"-", avatar:"tkj2/fardan.jpeg"},
-            {id:31, name:"MUH. RENDY SAPUTRA", gender:"Laki-laki", birthDate:"05 Januari 2008", phone:"-", address:"-", avatar:"tkj2/rendy.jpeg"},
-            {id:32, name:"MUHAMMAD ILHAM ULINUHA FADIL", gender:"Laki-laki", birthDate:"14 Agustus 2008", phone:"-", address:"-", avatar:"tkj2/ulin.jpeg"},
-            {id:33, name:"MUHAMMAD AGUS BAHTIAR", gender:"Laki-laki", birthDate:"16 Maret 2009", phone:"-", address:"-", avatar:"tkj2/agus.jpeg"},
-            {id:34, name:"MUHAMMAD AKBAR MAULANA", gender:"Laki-laki", birthDate:"29 Desember 2008", phone:"-", address:"-", avatar:"tkj2/akbar.jpeg"},
-            {id:35, name:"MUHAMMAD NASRUL MUKMIN", gender:"Laki-laki", birthDate:"3 Juli 2008", phone:"- ", address:'-', avatar:'tkj2/nasrul.jpeg'},
-            {id:36, name:'MUHAMMAD ZAENAL', gender:'Laki-laki', birthDate:'08 Agustus 2008', phone:'-', address:'-', avatar:'tkj2/zaenal.jpeg'},
-            {id:37, name:'MUHAMMAD ZAKY IRJA NA\'IM', gender:'Laki-laki', birthDate:'22 Februari 2009', phone:'-', address:'-', avatar:'tkj2/zaky.jpeg'},
-            {id:38, name:'NADINE KEYSHA ALIVIA', gender:'Perempuan', birthDate:'20 Oktober 2008', phone:'-', address:'-', avatar:'tkj2/nadin.jpeg'},
-            {id:39, name:'NAFINSA RESIACA PUTRI', gender:'Perempuan', birthDate:'14 Mei 2009', phone:'-', address:'-', avatar:'tkj2/resi.jpeg'},
-            {id:40, name:'NAFISHA SALSABILA WAHYUNINGTYAS', gender:'Perempuan', birthDate:'04 November 2008', phone:'-', address:'-', avatar:'tkj2/nafisha.jpeg'}
+            {id:1, name:"FOIRENT FEBRIANTY", gender:"perempuan", birthDate:"03 Februari 2009", phone:"-", address:"-", avatar:"tkj2/fio.jpeg", instagram:"-", gelar:"-"},
+            {id:2, name:"FITO AZKA WIRADANA", gender:"laki-laki", birthDate:"09 April 2009", phone:"-", address:"-", avatar:"tkj2/fito.jpeg", instagram:"-", gelar:"-"},
+            {id:3, name:"GALANG FERDIANTO", gender:"laki-laki", birthDate:"04 November 2008", phone:"-", address:"-", avatar:"tkj2/galfer.jpeg", instagram:"-", gelar:"-"},
+            {id:4, name:"GALANG SAKTIAWAN", gender:"Laki-laki", birthDate:"22 Mei 2008", phone:"-", address:"-", avatar:"tkj2/galsak.jpeg", instagram:"-", gelar:"-"},
+            {id:5, name:"GIANT EVO ARIANTO", gender:"Laki-laki", birthDate:"09 Desember 2008", phone:"-", address:"-", avatar:"tkj2/neo.jpeg", instagram:"-", gelar:"-"},
+            {id:6, name:"HANIEFUL FEBRIANSAH", gender:"Laki-laki", birthDate:"16 Februari 2008", phone:"-", address:"-", avatar:"tkj2/hanip.jpeg", instagram:"-", gelar:"-"},
+            {id:7, name:"HEFDZIL AKBAR", gender:"Laki-laki", birthDate:"12 juli 2009", phone:"-", address:"-", avatar:"tkj2/hefdzil.jpeg", instagram:"-", gelar:"-"},
+            {id:8, name:"HELSA INDNAZIL ARSY", gender:"Perempuan", birthDate:"02 mei 2008", phone:"-", address:"-", avatar:"tkj2/helsa.jpeg", instagram:"-", gelar:"-"},
+            {id:9, name:"IPAN MAULANA", gender:"Laki-laki", birthDate:"16 Oktober 2008", phone:"-", address:"-", avatar:"tkj2/ipan.jpeg", instagram:"-", gelar:"-"},
+            {id:10, name:"JAY ADITYA MAHOTRA", gender:"Laki-laki", birthDate:"25 November 2008", phone:"-", address:"-", avatar:"tkj2/jay.jpeg", instagram:"-", gelar:"-"},
+            {id:11, name:"JELITA KEYZA MAHARANI", gender:"Perempuan", birthDate:"04 Mei 2009", phone:"-", address:"- ", avatar:'tkj2/jelita.jpeg', instagram:"-", gelar:"-"},
+            {id:12, name:'JESSICA ANASTASYA OKTAFIANA', gender:'Perempuan', birthDate:'27 Oktober 2008', phone:'-', address:'-', avatar:'tkj2/jesica.jpeg', instagram:'-', gelar:'-'},
+            {id:13, name:'JOKO SATRIO', gender:'Laki-laki', birthDate:'25 Mei 2008', phone:'-', address:'-', avatar:'tkj2/joko.jpeg', instagram:'-', gelar:'-'},
+            {id:14, name:'JONATAN KRISTIAN', gender:'Laki-laki', birthDate:'18 Juli 2008', phone:'-', address:'-', avatar:'tkj2/jonatan.jpeg', instagram:'-', gelar:'-'},
+            {id:15, name:'JOVAN CORNELY', gender:'Laki-laki', birthDate:'15 Maret 2009', phone:'-', address:'-', avatar:'tkj2/jovan.jpeg', instagram:'-', gelar:'-'},
+            {id:16, name:"KEYRA AQEELA PUTRI NOVIA", gender:"Perempuan", birthDate:"25 Mei 2009", phone:"-", address:"- ", avatar:'tkj2/keyra.jpeg', instagram:'-', gelar:'-'},
+            {id:17, name:"KRISTIYA ANDARAKASIH", gender:"Perempuan", birthDate:"25 Agustus 2009", phone:"-", address:"-", avatar:"tkj2/kris.jpeg", instagram:'-', gelar:'-'},
+            {id:18, name:"LEITO PRATAMA PUTRA", gender:"Laki-laki", birthDate:"18 Januari 2009", phone:"-", address:"-", avatar:"tkj2/leito.jpeg", instagram:'-', gelar:'-'},
+            {id:19, name:"LUSIANA ARISTIANTY KUSUMA DEWI", gender:"Perempuan", birthDate:"05 Februari 2009", phone:"-", address:"-", avatar:"tkj2/lusiana.jpeg", instagram:'-', gelar:'-'},
+            {id:20, name:"(#ALMARHUN#) M. ARIFIN ROZAK", gender:"Laki-laki", birthDate:"26 Juli 2008", phone:"-", address:"-", avatar:"tkj2/ripin.jpeg", instagram:'-', gelar:'-'},
+            {id:21, name:"M. PARAMA MAHAPUTRA ROKHIM", gender:"Laki-laki", birthDate:"03 Februari 2009", phone:"-", address:"-", avatar:'tkj2/parama.jpeg', instagram:'-', gelar:'-'},
+            {id:22, name:"MANDA HARTIKA", gender:"Perempuan", birthDate:'10 Agustus 2008', phone:'-', address:'-', avatar:'tkj2/manda.jpeg', instagram:'-', gelar:'-'},
+            {id:23, name:'MARGARET CANTIKA', gender:'Perempuan', birthDate:'04 Agustus 2009', phone:'-', address:'-', avatar:'tkj2/margaret.jpeg', instagram:'-', gelar:'-'},
+            {id:24, name:'MARVEL SETIA PERDANA', gender:'Laki-laki', birthDate:'15 Maret 2008', phone:'-', address:'-', avatar:'tkj2/marvel.jpeg', instagram:'-', gelar:'-'},
+            {id:25, name:"MARVEL SURYA ATMAJA ", gender:'Laki-laki', birthDate:'12 Maret 2009', phone:'-', address:'-', avatar:'tkj2/mansur.jpeg', instagram:'-', gelar:'-'},
+            {id:26, name:'MELVIANA MILLYANA PUTRI ARIFTI', gender:'Perempuan', birthDate:'24 Mei 2008', phone:'-', address:'-', avatar:'tkj2/melvi.jpeg', instagram:'-', gelar:'-'},
+            {id:27, name:"MOH. ILHAM AL-FARUQ", gender:"Laki-laki", birthDate:"06 November 2008", phone:"-", address:"-", avatar:"tkj2/faruq.jpeg", instagram:'-', gelar:'-'},
+            {id:28, name:"MOH. NURIL ARIFIN", gender:"Laki-laki", birthDate:"22 Mei 2008", phone:"-", address:"-", avatar:"tkj2/nuril.jpeg", instagram:'-', gelar:'-'},
+            {id:29, name:"MOHAMMAD KAKA ILHAM NUDIN", gender:"Laki-laki", birthDate:"10 Maret 2008", phone:"-", address:"-", avatar:"tkj2/kaka.jpeg", instagram:'-', gelar:'-'},
+            {id:30, name:"MOHAMMAD FARDAN ZAKI ARIAN SAPUTRA", gender:"Laki-laki", birthDate:"05 Mei 2008", phone:"-", address:"-", avatar:"tkj2/fardan.jpeg", instagram:'-', gelar:'-'},
+            {id:31, name:"MUH. RENDY SAPUTRA", gender:"Laki-laki", birthDate:"05 Januari 2008", phone:"-", address:"-", avatar:"tkj2/rendy.jpeg", instagram:'-', gelar:'-'},
+            {id:32, name:"MUHAMMAD ILHAM ULINUHA FADIL", gender:"Laki-laki", birthDate:"14 Agustus 2008", phone:"-", address:"-", avatar:"tkj2/ulin.jpeg", instagram:'-', gelar:'-'},
+            {id:33, name:"MUHAMMAD AGUS BAHTIAR", gender:"Laki-laki", birthDate:"16 Maret 2009", phone:"-", address:"-", avatar:"tkj2/agus.jpeg", instagram:'-', gelar:'-'},
+            {id:34, name:"MUHAMMAD AKBAR MAULANA", gender:"Laki-laki", birthDate:"29 Desember 2008", phone:"-", address:"-", avatar:"tkj2/akbar.jpeg", instagram:'-', gelar:'-'},
+            {id:35, name:"MUHAMMAD NASRUL MUKMIN", gender:"Laki-laki", birthDate:"3 Juli 2008", phone:"- ", address:'-', avatar:'tkj2/nasrul.jpeg', instagram:'-', gelar:'-'},
+            {id:36, name:'MUHAMMAD ZAENAL', gender:'Laki-laki', birthDate:'08 Agustus 2008', phone:'-', address:'-', avatar:'tkj2/zaenal.jpeg', instagram:'-', gelar:'-'},
+            {id:37, name:'MUHAMMAD ZAKY IRJA NA\'IM', gender:'Laki-laki', birthDate:'22 Februari 2009', phone:'-', address:'-', avatar:'tkj2/zaky.jpeg', instagram:'-', gelar:'-'},
+            {id:38, name:'NADINE KEYSHA ALIVIA', gender:'Perempuan', birthDate:'20 Oktober 2008', phone:'-', address:'-', avatar:'tkj2/nadin.jpeg', instagram:'-', gelar:'-'},
+            {id:39, name:'NAFINSA RESIACA PUTRI', gender:'Perempuan', birthDate:'14 Mei 2009', phone:'-', address:'-', avatar:'tkj2/resi.jpeg', instagram:'-', gelar:'-'},
+            {id:40, name:'NAFISHA SALSABILA WAHYUNINGTYAS', gender:'Perempuan', birthDate:'04 November 2008', phone:'-', address:'-', avatar:'tkj2/nafisha.jpeg', instagram:'-', gelar:'-'}
         ];
 
         // Mobile menu
@@ -419,6 +484,7 @@
             const s = studentsData.find(x=>x.id==id);
             if(!s) return;
             const prof = document.getElementById('student-profile');
+            const instagramLink = s.instagram !== '-' ? `<a href="https://instagram.com/${s.instagram}" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: #f09433; color: white; border-radius: 20px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(240, 148, 51, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';"><i class="fab fa-instagram"></i> Instagram</a>` : '';
             prof.innerHTML = `
                 <div class="student-container">
                     <div class="student-header">
@@ -432,7 +498,9 @@
                         <div class="detail-row"><i class="fas fa-birthday-cake"></i><span class="label">Tanggal Lahir</span><span class="value">${s.birthDate}</span></div>
                         <div class="detail-row"><i class="fas fa-phone"></i><span class="label">Telepon</span><span class="value">${s.phone}</span></div>
                         <div class="detail-row"><i class="fas fa-map-marker-alt"></i><span class="label">Alamat</span><span class="value">${s.address}</span></div>
+                        <div class="detail-row"><i class="fas fa-medal"></i><span class="label">Gelar Kelas</span><span class="value">${s.gelar}</span></div>
                     </div>
+                    ${s.instagram !== '-' ? `<div style="text-align:center; padding: 15px 40px; border-top: 1px solid #e2e8f0; margin-top: 20px;">${instagramLink}</div>` : ''}
                     <div style="text-align:center; padding: 20px 40px 40px;"><button id="backBtn" class="filter-btn" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border: none; padding: 12px 32px; border-radius: 20px; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem;"><i class="fas fa-arrow-left"></i> Kembali</button></div>
                 </div>
             `;
@@ -441,7 +509,8 @@
                 e.target.style.transform = 'translateY(-2px)';
                 e.target.style.boxShadow = '0 8px 20px rgba(59, 130, 246, 0.3)';
             });
-            document.getElementById('backBtn').addEventListener('mouseout', (e) => {
+            document.getElementById('backBtn').addE
+            ventListener('mouseout', (e) => {
                 e.target.style.transform = 'translateY(0)';
                 e.target.style.boxShadow = 'none';
             });
@@ -473,6 +542,15 @@
                 icon: "fa-images"
             });
         }
+        
+        // Tambah easter egg
+        galleryData.push({
+            src: `tkj2/egg.jpeg`,
+            fullSrc: `tkj2/egg.jpeg`,
+            caption: `selamat anda mendapatkan kan item rahasia!`,
+            icon: "fa-egg",
+            isEasterEgg: true
+        });
 
         let currentImageIndex = 0;
         let modal = document.getElementById("imageModal");
@@ -480,30 +558,52 @@
         let modalCaption = document.getElementById("modalCaption");
         let modalLoading = document.getElementById("modalLoading");
 
-        // Fungsi untuk memuat galeri
-        function loadGallery() {
+        // Fungsi untuk memuat galeri dengan search
+        function loadGallery(filterText = '') {
             const grid = document.getElementById('galeriGrid');
             if (!grid) return;
             
             grid.innerHTML = '';
+            let displayedCount = 0;
+            const searchLower = filterText.toLowerCase();
+            
+            // Cek apakah mencari egg dengan "j2"
+            const showEasterEgg = searchLower === 'j2';
             
             galleryData.forEach((item, index) => {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'galeri-item';
-                galleryItem.onclick = () => openModal(index);
+                const itemNumber = index + 1;
+                const captionLower = item.caption.toLowerCase();
                 
-                galleryItem.innerHTML = `
-                    <img src="${item.src}" alt="${item.caption}" loading="lazy">
-                    <div class="galeri-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                    <div class="galeri-caption">
-                        <i class="fas ${item.icon}"></i> ${item.caption}
-                    </div>
-                `;
+                let shouldDisplay = false;
+                if (item.isEasterEgg) {
+                    shouldDisplay = showEasterEgg;
+                } else {
+                    shouldDisplay = searchLower === '' || captionLower.includes(searchLower) || itemNumber.toString().includes(filterText);
+                }
                 
-                grid.appendChild(galleryItem);
+                if (shouldDisplay) {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'galeri-item';
+                    galleryItem.onclick = () => openModal(index);
+                    
+                    galleryItem.innerHTML = `
+                        <img src="${item.src}" alt="${item.caption}" loading="lazy">
+                        <div class="galeri-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="galeri-caption">
+                            <i class="fas ${item.icon}"></i> ${item.caption}
+                        </div>
+                    `;
+                    
+                    grid.appendChild(galleryItem);
+                    displayedCount++;
+                }
             });
+            
+            if (displayedCount === 0) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #94a3b8; font-size: 1.1rem;"><i class="fas fa-search" style="font-size: 2rem; margin-bottom: 10px; display: block;"></i>Tidak ada foto yang cocok dengan pencarian "' + filterText + '"</div>';
+            }
         }
 
         // Fungsi untuk membuka modal
@@ -577,8 +677,81 @@
             originalSwitchSection(sectionId, studentId);
             if (sectionId === 'gallery') {
                 loadGallery();
+                const searchInput = document.getElementById('gallerySearch');
+                if (searchInput) searchInput.value = '';
             }
         }
+        
+        // Event listener untuk search galeri
+        document.addEventListener('DOMContentLoaded', () => {
+            // Easter Egg Button Handler
+            const easterEggBtn = document.getElementById('easterEggBtn');
+            if (easterEggBtn) {
+                easterEggBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    // Temukan index egg.jpeg (yang terakhir di galleryData)
+                    const eggIndex = galleryData.length - 1;
+                    openModal(eggIndex);
+                });
+                
+                easterEggBtn.addEventListener('mouseenter', (e) => {
+                    easterEggBtn.style.opacity = '0.5';
+                });
+                
+                easterEggBtn.addEventListener('mouseleave', (e) => {
+                    easterEggBtn.style.opacity = '0.12';
+                });
+            }
+            
+            const searchInput = document.getElementById('gallerySearch');
+            const clearBtn = document.getElementById('clearSearchBtn');
+            
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    loadGallery(e.target.value);
+                });
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') e.preventDefault();
+                });
+                
+                if (clearBtn) {
+                    clearBtn.addEventListener('click', () => {
+                        searchInput.value = '';
+                        loadGallery('');
+                    });
+                }
+            }
+
+            // ===== COMMENTS TO ADMIN FEATURE =====
+            const commentsForm = document.getElementById('commentsForm');
+            const adminWhatsApp = '085336860656'; // Nomor WhatsApp Admin
+
+            // Form submission - Generate WhatsApp link
+            if (commentsForm) {
+                commentsForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const commentMessage = document.getElementById('commentMessage').value.trim();
+
+                    // Validasi
+                    if (!commentMessage) {
+                        alert('Tulis pesan terlebih dahulu!');
+                        return;
+                    }
+
+                    // Encode URL untuk WhatsApp
+                    const encodedMessage = encodeURIComponent(commentMessage);
+                    const whatsappUrl = `https://wa.me/${adminWhatsApp}?text=${encodedMessage}`;
+
+                    // Buka WhatsApp
+                    window.open(whatsappUrl, '_blank');
+
+                    // Reset form setelah submit
+                    commentsForm.reset();
+                });
+            }
+        });
     </script>
 </body>
 </html>
