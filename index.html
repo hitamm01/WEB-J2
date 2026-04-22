@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport disetel ke 1280 agar tampilan mobile dan desktop sama -->
+    <meta name="viewport" content="width=1280">
     <title> TKJ 2</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -15,24 +18,27 @@
                 <img class="logo-img" src="tkj2/tkj 2.jpg" alt="Logo Kelas">
                 <span class="logo-text">Kelas TKJ 2</span>
             </div>
-            
+
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
-            
+
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" class="nav-link active" data-section="home"><i class="fas fa-home"></i> Beranda</a></li>
-                
+
                 <li class="dropdown">
-                    <a href="#" class="nav-link"><i class="fas fa-user-graduate"></i> Siswa <i class="fas fa-chevron-down" style="margin-left: 5px; font-size: 0.8rem;"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-user-graduate"></i> Siswa <i
+                            class="fas fa-chevron-down" style="margin-left: 5px; font-size: 0.8rem;"></i></a>
                     <div class="dropdown-menu" id="studentDropdown"></div>
                 </li>
-                
-                <li><a href="#" class="nav-link" data-section="wali-kelas"><i class="fas fa-chalkboard-teacher"></i> Wali Kelas</a></li>
+
+                <li><a href="#" class="nav-link" data-section="wali-kelas"><i class="fas fa-chalkboard-teacher"></i>
+                        Wali Kelas</a></li>
                 <li><a href="#" class="nav-link" data-section="structure"><i class="fas fa-sitemap"></i> Babu</a></li>
                 <li><a href="#" class="nav-link" data-section="all-students"><i class="fas fa-users"></i> Siswa</a></li>
                 <li><a href="#" class="nav-link" data-section="gallery"><i class="fas fa-images"></i> Galeri</a></li>
-                <li><a href="#" class="nav-link" data-section="comments"><i class="fas fa-comments"></i> Komentar</a></li>
+                <li><a href="#" class="nav-link" data-section="comments"><i class="fas fa-comments"></i> Komentar</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -97,13 +103,16 @@
                 <i class="fas fa-hashtag"></i> Info lengkap nya bisa kunjungi media sosial kami!
             </h2>
             <div class="social-links">
-                <a href="https://www.tiktok.com/@miracle_class2?_r=1&_t=ZS-95MPaFN3cpN" target="_blank" class="social-btn tiktok">
+                <a href="https://www.tiktok.com/@miracle_class2?_r=1&_t=ZS-95MPaFN3cpN" target="_blank"
+                    class="social-btn tiktok">
                     <i class="fab fa-tiktok"></i> TikTok
                 </a>
-                <a href="https://youtube.com/@agussriyanto-e6x?si=loBFBIbUHbAhUP3P" target="_blank" class="social-btn youtube">
+                <a href="https://youtube.com/@agussriyanto-e6x?si=loBFBIbUHbAhUP3P" target="_blank"
+                    class="social-btn youtube">
                     <i class="fab fa-youtube"></i> YouTube
                 </a>
-                <a href="https://www.instagram.com/miracle_clas?igsh=MWt2cnQ3a2xidmU0aQ==" target="_blank" class="social-btn instagram">
+                <a href="https://www.instagram.com/miracle_clas?igsh=MWt2cnQ3a2xidmU0aQ==" target="_blank"
+                    class="social-btn instagram">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
             </div>
@@ -116,7 +125,7 @@
                 <h2 class="wali-kelas-title">
                     <i class="fas fa-chalkboard-teacher"></i> Profil Wali Kelas
                 </h2>
-                
+
                 <div class="wali-grid">
                     <!-- Wali Kelas 10: Drs. Ahmad Fauzi -->
                     <div class="wali-card">
@@ -228,7 +237,8 @@
                 </div>
 
                 <form id="commentsForm" class="comments-form-simple">
-                    <textarea id="commentMessage" name="commentMessage" class="form-textarea-simple" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                    <textarea id="commentMessage" name="commentMessage" class="form-textarea-simple"
+                        placeholder="Tulis pesan Anda di sini..." required></textarea>
                     <button type="submit" class="submit-btn-simple">
                         <i class="fab fa-whatsapp"></i> Kirim ke Admin
                     </button>
@@ -241,7 +251,7 @@
             <h2 style="text-align: center; margin-bottom: 40px; color: #2c3e50;">
                 <i class="fas fa-sitemap"></i> Struktur Kelas XI TKJ 2
             </h2>
-            
+
             <div class="structure-tree">
                 <!-- Top Level: Ketua & Wakil Ketua -->
                 <div class="tree-level top-level">
@@ -319,14 +329,19 @@
             <div class="galeri-container">
                 <h2 class="galeri-title">
                     <i class="fas fa-images"></i> Galeri Memori TKJ 2
-                    <button id="easterEggBtn" style="opacity: 0.12; font-size: 0.8rem; padding: 2px 6px; border: 1px solid transparent; background: none; cursor: pointer; color: #64748b; transition: opacity 0.3s; margin-left: 10px;" title="🥚">🥚</button>
+                    <button id="easterEggBtn"
+                        style="opacity: 0.12; font-size: 0.8rem; padding: 2px 6px; border: 1px solid transparent; background: none; cursor: pointer; color: #64748b; transition: opacity 0.3s; margin-left: 10px;"
+                        title="🥚">🥚</button>
                 </h2>
-                
+
                 <div style="margin-bottom: 25px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-                    <input type="text" id="gallerySearch" placeholder="🔍 Cari foto berdasarkan nomor atau kata kunci..." style="flex: 1; min-width: 200px; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 20px; font-size: 0.95rem; transition: all 0.3s ease;" />
-                    <button id="clearSearchBtn" style="padding: 10px 20px; background: #e2e8f0; border: none; border-radius: 20px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Bersihkan</button>
+                    <input type="text" id="gallerySearch"
+                        placeholder="🔍 Cari foto berdasarkan nomor atau kata kunci..."
+                        style="flex: 1; min-width: 200px; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 20px; font-size: 0.95rem; transition: all 0.3s ease;" />
+                    <button id="clearSearchBtn"
+                        style="padding: 10px 20px; background: #e2e8f0; border: none; border-radius: 20px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">Bersihkan</button>
                 </div>
-                
+
                 <div class="galeri-grid" id="galeriGrid">
                     <!-- Item galeri akan diisi oleh JavaScript -->
                 </div>
@@ -349,49 +364,73 @@
         <footer></footer>
     </div>
 
+    <!-- AI Chatbot Floating Button & Window -->
+    <button id="chatbotBtn" class="chatbot-btn">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <div id="chatbotWindow" class="chatbot-window">
+        <div class="chatbot-header">
+            <h3><i class="fas fa-robot"></i> AI Asisten TKJ 2</h3>
+            <div class="chatbot-header-btns">
+                <button id="clearChatBtn" title="Hapus History"><i class="fas fa-trash-alt"></i></button>
+                <button id="closeChatBtn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="bot-msg">Halo! Saya RKJ AI TKJ 2. Silakan tanya apa saja tentang kelas ini (sejarah, guru,
+                praktikum, dll).</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Ketik pertanyaan...">
+            <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="chatbot-data.js"></script>
     <script>
         // 40 DATA SISWA (nama, tanggal lahir, telepon, alamat, instagram, gelar)
         const studentsData = [
-            {id:1, name:"FOIRENT FEBRIANTY", gender:"perempuan", birthDate:"03 Februari 2009", phone:"-", address:"-", avatar:"tkj2/fio.jpeg", instagram:"-", gelar:"(EL JOGLANGAN),(EL JEPANG),(EL URAT MALU KEPOTONG)"},
-            {id:2, name:"FITO AZKA WIRADANA", gender:"laki-laki", birthDate:"09 April 2009", phone:"-", address:"-", avatar:"tkj2/fito.jpeg", instagram:"-", gelar:"(PLENGER),(EL ASEKK),(EL KERUSUHAN -ATITUD)"},
-            {id:3, name:"GALANG FERDIANTO", gender:"laki-laki", birthDate:"04 November 2008", phone:"-", address:"-", avatar:"tkj2/galfer.jpeg", instagram:"-", gelar:"(PLENGER),(EL GENSIT),(EL TEMON)"},
-            {id:4, name:"GALANG SAKTIAWAN", gender:"Laki-laki", birthDate:"22 Mei 2008", phone:"-", address:"-", avatar:"tkj2/galsak.jpeg", instagram:"-", gelar:"(EL NPC)"},
-            {id:5, name:"GIANT EVO ARIANTO", gender:"Laki-laki", birthDate:"09 Desember 2008", phone:"-", address:"-", avatar:"tkj2/neo.jpeg", instagram:"-", gelar:"(MEMBER JMK 48),(EL JEPANG),(EL GENSIT),(EL KREMPENG),(EL KAYAH)"},
-            {id:6, name:"HANIEFUL FEBRIANSAH", gender:"Laki-laki", birthDate:"16 Februari 2008", phone:"-", address:"-", avatar:"tkj2/hanip.jpeg", instagram:"-", gelar:"(EL JOGLANGAN),(EL JEPANG),(EL JEPANG)"},
-            {id:7, name:"HEFDZIL AKBAR", gender:"Laki-laki", birthDate:"12 juli 2009", phone:"-", address:"-", avatar:"tkj2/hefdzil.jpeg", instagram:"-", gelar:"(EL NPC),(EL MIE AYAM)"},
-            {id:8, name:"HELSA INDNAZIL ARSY", gender:"Perempuan", birthDate:"02 mei 2008", phone:"-", address:"-", avatar:"tkj2/helsa.jpeg", instagram:"-", gelar:"(EL SAHABAT)"},
-            {id:9, name:"IPAN MAULANA", gender:"Laki-laki", birthDate:"16 Oktober 2008", phone:"-", address:"-", avatar:"tkj2/ipan.jpeg", instagram:"-", gelar:"(JOMOKK),(FEMBOY),(EL KEAHLIAN),(EL SEPUH KEAHLIAN)"},
-            {id:10, name:"JAY ADITYA MAHOTRA", gender:"Laki-laki", birthDate:"25 November 2008", phone:"-", address:"-", avatar:"tkj2/jay.jpeg", instagram:"-", gelar:"(EL USUS),(EL PESURUH)"},
-            {id:11, name:"JELITA KEYZA MAHARANI", gender:"Perempuan", birthDate:"04 Mei 2009", phone:"-", address:"- ", avatar:'tkj2/jelita.jpeg', instagram:"-", gelar:"-"},
-            {id:12, name:'JESSICA ANASTASYA OKTAFIANA', gender:'Perempuan', birthDate:'27 Oktober 2008', phone:'-', address:'-', avatar:'tkj2/jesica.jpeg', instagram:'-', gelar:'-'},
-            {id:13, name:'JOKO SATRIO', gender:'Laki-laki', birthDate:'25 Mei 2008', phone:'-', address:'-', avatar:'tkj2/joko.jpeg', instagram:'-', gelar:'-'},
-            {id:14, name:'JONATAN KRISTIAN', gender:'Laki-laki', birthDate:'18 Juli 2008', phone:'-', address:'-', avatar:'tkj2/jonatan.jpeg', instagram:'-', gelar:'(EL TEKNISI)'},
-            {id:15, name:'JOVAN CORNELY', gender:'Laki-laki', birthDate:'15 Maret 2009', phone:'-', address:'-', avatar:'tkj2/jovan.jpeg', instagram:'-', gelar:'(EL JEPANG),(EL GENSIT),(PENYUKA LOLI)'},
-            {id:16, name:"KEYRA AQEELA PUTRI NOVIA", gender:"Perempuan", birthDate:"25 Mei 2009", phone:"-", address:"- ", avatar:'tkj2/keyra.jpeg', instagram:'-', gelar:'-'},
-            {id:17, name:"KRISTIYA ANDARAKASIH", gender:"Perempuan", birthDate:"25 Agustus 2009", phone:"-", address:"-", avatar:"tkj2/kris.jpeg", instagram:'-', gelar:'-'},
-            {id:18, name:"LEITO PRATAMA PUTRA", gender:"Laki-laki", birthDate:"18 Januari 2009", phone:"-", address:"-", avatar:"tkj2/leito.jpeg", instagram:'-', gelar:'(EL DOMBLEHH)'},
-            {id:19, name:"LUSIANA ARISTIANTY KUSUMA DEWI", gender:"Perempuan", birthDate:"05 Februari 2009", phone:"-", address:"-", avatar:"tkj2/lusiana.jpeg", instagram:'-', gelar:'(EL 01),(KESAYANGAN MTK),(EL KECERDASAN),(EL SAHABAT)'},
-            {id:20, name:"(#ALMARHUN#) M. ARIFIN ROZAK", gender:"Laki-laki", birthDate:"26 Juli 2008", phone:"-", address:"-", avatar:"tkj2/ripin.jpeg", instagram:'-', gelar:'-'},
-            {id:21, name:"M. PARAMA MAHAPUTRA ROKHIM", gender:"Laki-laki", birthDate:"03 Februari 2009", phone:"-", address:"-", avatar:'tkj2/parama.jpeg', instagram:'-', gelar:'(CEO LELE)'},
-            {id:22, name:"MANDA HARTIKA", gender:"Perempuan", birthDate:'10 Agustus 2008', phone:'-', address:'-', avatar:'tkj2/manda.jpeg', instagram:'-', gelar:'(EL 02),(EL ANAK GURU),(EL JEPANG)'},
-            {id:23, name:'MARGARET CANTIKA', gender:'Perempuan', birthDate:'04 Agustus 2009', phone:'-', address:'-', avatar:'tkj2/margaret.jpeg', instagram:'-', gelar:'-'},
-            {id:24, name:'MARVEL SETIA PERDANA', gender:'Laki-laki', birthDate:'15 Maret 2008', phone:'-', address:'-', avatar:'tkj2/marvel.jpeg', instagram:'-', gelar:'-'},
-            {id:25, name:"MARVEL SURYA ATMAJA ", gender:'Laki-laki', birthDate:'12 Maret 2009', phone:'-', address:'-', avatar:'tkj2/mansur.jpeg', instagram:'-', gelar:'(EL JOGLANGAN),(CEO SATE)'},
-            {id:26, name:'MELVIANA MILLYANA PUTRI ARIFTI', gender:'Perempuan', birthDate:'24 Mei 2008', phone:'-', address:'-', avatar:'tkj2/melvi.jpeg', instagram:'-', gelar:'-'},
-            {id:27, name:"MOH. ILHAM AL-FARUQ", gender:"Laki-laki", birthDate:"06 November 2008", phone:"-", address:"-", avatar:"tkj2/faruq.jpeg", instagram:'-', gelar:'(EL FF)'},
-            {id:28, name:"MOH. NURIL ARIFIN", gender:"Laki-laki", birthDate:"22 Mei 2008", phone:"-", address:"-", avatar:"tkj2/nuril.jpeg", instagram:'-', gelar:'(EL KEBUGARAN)'},
-            {id:29, name:"MOHAMMAD KAKA ILHAM NUDIN", gender:"Laki-laki", birthDate:"10 Maret 2008", phone:"-", address:"-", avatar:"tkj2/kaka.jpeg", instagram:'-', gelar:'-'},
-            {id:30, name:"MOHAMMAD FARDAN ZAKI ARIAN SAPUTRA", gender:"Laki-laki", birthDate:"05 Mei 2008", phone:"-", address:"-", avatar:"tkj2/fardan.jpeg", instagram:'-', gelar:'(NIGA),(NIKER),(EL FAREL)'},
-            {id:31, name:"MUH. RENDY SAPUTRA", gender:"Laki-laki", birthDate:"05 Januari 2008", phone:"-", address:"-", avatar:"tkj2/rendy.jpeg", instagram:'-', gelar:'(EL TURU)'},
-            {id:32, name:"MUHAMMAD ILHAM ULINUHA FADIL", gender:"Laki-laki", birthDate:"14 Agustus 2008", phone:"-", address:"-", avatar:"tkj2/ulin.jpeg", instagram:'-', gelar:'(EL MAHA KARYA),(EL JEPANG),(EL SEPUH)'},
-            {id:33, name:"MUHAMMAD AGUS BAHTIAR", gender:"Laki-laki", birthDate:"16 Maret 2009", phone:"-", address:"-", avatar:"tkj2/agus.jpeg", instagram:'-', gelar:'(NIKER),(EL SUKI)'},
-            {id:34, name:"MUHAMMAD AKBAR MAULANA", gender:"Laki-laki", birthDate:"29 Desember 2008", phone:"-", address:"-", avatar:"tkj2/akbar.jpeg", instagram:'-', gelar:'(CEO PECEL)'},
-            {id:35, name:"MUHAMMAD NASRUL MUKMIN", gender:"Laki-laki", birthDate:"3 Juli 2008", phone:"- ", address:'-', avatar:'tkj2/nasrul.jpeg', instagram:'-', gelar:'(EL JOGLANGAN),(EL PLENGER),(ADMIN PEMALAS)'},
-            {id:36, name:'MUHAMMAD ZAENAL', gender:'Laki-laki', birthDate:'08 Agustus 2008', phone:'-', address:'-', avatar:'tkj2/zaenal.jpeg', instagram:'-', gelar:'(EL NPC),(EL JAWA)'},
-            {id:37, name:'MUHAMMAD ZAKY IRJA NA\'IM', gender:'Laki-laki', birthDate:'22 Februari 2009', phone:'-', address:'-', avatar:'tkj2/zaky.jpeg', instagram:'-', gelar:'-'},
-            {id:38, name:'NADINE KEYSHA ALIVIA', gender:'Perempuan', birthDate:'20 Oktober 2008', phone:'-', address:'-', avatar:'tkj2/nadin.jpeg', instagram:'-', gelar:'-'},
-            {id:39, name:'NAFINSA RESIACA PUTRI', gender:'Perempuan', birthDate:'14 Mei 2009', phone:'-', address:'-', avatar:'tkj2/resi.jpeg', instagram:'-', gelar:'-'},
-            {id:40, name:'NAFISHA SALSABILA WAHYUNINGTYAS', gender:'Perempuan', birthDate:'04 November 2008', phone:'-', address:'-', avatar:'tkj2/nafisha.jpeg', instagram:'-', gelar:'(EL JEPANG)'}
+            { id: 1, name: "FOIRENT FEBRIANTY", gender: "perempuan", birthDate: "03 Februari 2009", phone: "-", address: "-", avatar: "tkj2/fio.jpeg", instagram: "-", gelar: "(EL KLENGER)" },
+            { id: 2, name: "FITO AZKA WIRADANA", gender: "laki-laki", birthDate: "09 April 2009", phone: "-", address: "-", avatar: "tkj2/fito.jpeg", instagram: "-", gelar: "-" },
+            { id: 3, name: "GALANG FERDIANTO", gender: "laki-laki", birthDate: "04 November 2008", phone: "-", address: "-", avatar: "tkj2/galfer.jpeg", instagram: "-", gelar: "-" },
+            { id: 4, name: "GALANG SAKTIAWAN", gender: "Laki-laki", birthDate: "22 Mei 2008", phone: "-", address: "-", avatar: "tkj2/galsak.jpeg", instagram: "-", gelar: "-" },
+            { id: 5, name: "GIANT EVO ARIANTO", gender: "Laki-laki", birthDate: "09 Desember 2008", phone: "-", address: "-", avatar: "tkj2/neo.jpeg", instagram: "-", gelar: "-" },
+            { id: 6, name: "HANIEFUL FEBRIANSAH", gender: "Laki-laki", birthDate: "16 Februari 2008", phone: "-", address: "-", avatar: "tkj2/hanip.jpeg", instagram: "-", gelar: "-" },
+            { id: 7, name: "HEFDZIL AKBAR", gender: "Laki-laki", birthDate: "12 juli 2009", phone: "-", address: "-", avatar: "tkj2/hefdzil.jpeg", instagram: "-", gelar: "-" },
+            { id: 8, name: "HELSA INDNAZIL ARSY", gender: "Perempuan", birthDate: "02 mei 2008", phone: "-", address: "-", avatar: "tkj2/helsa.jpeg", instagram: "-", gelar: "-" },
+            { id: 9, name: "IPAN MAULANA", gender: "Laki-laki", birthDate: "16 Oktober 2008", phone: "-", address: "-", avatar: "tkj2/ipan.jpeg", instagram: "-", gelar: "-" },
+            { id: 10, name: "JAY ADITYA MAHOTRA", gender: "Laki-laki", birthDate: "25 November 2008", phone: "-", address: "-", avatar: "tkj2/jay.jpeg", instagram: "-", gelar: "-" },
+            { id: 11, name: "JELITA KEYZA MAHARANI", gender: "Perempuan", birthDate: "04 Mei 2009", phone: "-", address: "- ", avatar: 'tkj2/jelita.jpeg', instagram: "-", gelar: "-" },
+            { id: 12, name: 'JESSICA ANASTASYA OKTAFIANA', gender: 'Perempuan', birthDate: '27 Oktober 2008', phone: '-', address: '-', avatar: 'tkj2/jesica.jpeg', instagram: '-', gelar: '-' },
+            { id: 13, name: 'JOKO SATRIO', gender: 'Laki-laki', birthDate: '25 Mei 2008', phone: '-', address: '-', avatar: 'tkj2/joko.jpeg', instagram: '-', gelar: '-' },
+            { id: 14, name: 'JONATAN KRISTIAN', gender: 'Laki-laki', birthDate: '18 Juli 2008', phone: '-', address: '-', avatar: 'tkj2/jonatan.jpeg', instagram: '-', gelar: '-' },
+            { id: 15, name: 'JOVAN CORNELY', gender: 'Laki-laki', birthDate: '15 Maret 2009', phone: '-', address: '-', avatar: 'tkj2/jovan.jpeg', instagram: '-', gelar: '-' },
+            { id: 16, name: "KEYRA AQEELA PUTRI NOVIA", gender: "Perempuan", birthDate: "25 Mei 2009", phone: "-", address: "- ", avatar: 'tkj2/keyra.jpeg', instagram: '-', gelar: '-' },
+            { id: 17, name: "KRISTIYA ANDARAKASIH", gender: "Perempuan", birthDate: "25 Agustus 2009", phone: "-", address: "-", avatar: "tkj2/kris.jpeg", instagram: '-', gelar: '-' },
+            { id: 18, name: "LEITO PRATAMA PUTRA", gender: "Laki-laki", birthDate: "18 Januari 2009", phone: "-", address: "-", avatar: "tkj2/leito.jpeg", instagram: '-', gelar: '-' },
+            { id: 19, name: "LUSIANA ARISTIANTY KUSUMA DEWI", gender: "Perempuan", birthDate: "05 Februari 2009", phone: "-", address: "-", avatar: "tkj2/lusiana.jpeg", instagram: '-', gelar: '-' },
+            { id: 20, name: "(#ALMARHUN#) M. ARIFIN ROZAK", gender: "Laki-laki", birthDate: "26 Juli 2008", phone: "-", address: "-", avatar: "tkj2/ripin.jpeg", instagram: '-', gelar: '-' },
+            { id: 21, name: "M. PARAMA MAHAPUTRA ROKHIM", gender: "Laki-laki", birthDate: "03 Februari 2009", phone: "-", address: "-", avatar: 'tkj2/parama.jpeg', instagram: '-', gelar: '-' },
+            { id: 22, name: "MANDA HARTIKA", gender: "Perempuan", birthDate: '10 Agustus 2008', phone: '-', address: '-', avatar: 'tkj2/manda.jpeg', instagram: '-', gelar: '-' },
+            { id: 23, name: 'MARGARET CANTIKA', gender: 'Perempuan', birthDate: '04 Agustus 2009', phone: '-', address: '-', avatar: 'tkj2/margaret.jpeg', instagram: '-', gelar: '-' },
+            { id: 24, name: 'MARVEL SETIA PERDANA', gender: 'Laki-laki', birthDate: '15 Maret 2008', phone: '-', address: '-', avatar: 'tkj2/marvel.jpeg', instagram: '-', gelar: '-' },
+            { id: 25, name: "MARVEL SURYA ATMAJA ", gender: 'Laki-laki', birthDate: '12 Maret 2009', phone: '-', address: '-', avatar: 'tkj2/mansur.jpeg', instagram: '-', gelar: '-' },
+            { id: 26, name: 'MELVIANA MILLYANA PUTRI ARIFTI', gender: 'Perempuan', birthDate: '24 Mei 2008', phone: '-', address: '-', avatar: 'tkj2/melvi.jpeg', instagram: '-', gelar: '-' },
+            { id: 27, name: "MOH. ILHAM AL-FARUQ", gender: "Laki-laki", birthDate: "06 November 2008", phone: "-", address: "-", avatar: "tkj2/faruq.jpeg", instagram: '-', gelar: '-' },
+            { id: 28, name: "MOH. NURIL ARIFIN", gender: "Laki-laki", birthDate: "22 Mei 2008", phone: "-", address: "-", avatar: "tkj2/nuril.jpeg", instagram: '-', gelar: '-' },
+            { id: 29, name: "MOHAMMAD KAKA ILHAM NUDIN", gender: "Laki-laki", birthDate: "10 Maret 2008", phone: "-", address: "-", avatar: "tkj2/kaka.jpeg", instagram: '-', gelar: '-' },
+            { id: 30, name: "MOHAMMAD FARDAN ZAKI ARIAN SAPUTRA", gender: "Laki-laki", birthDate: "05 Mei 2008", phone: "-", address: "-", avatar: "tkj2/fardan.jpeg", instagram: '-', gelar: '-' },
+            { id: 31, name: "MUH. RENDY SAPUTRA", gender: "Laki-laki", birthDate: "05 Januari 2008", phone: "-", address: "-", avatar: "tkj2/rendy.jpeg", instagram: '-', gelar: '-' },
+            { id: 32, name: "MUHAMMAD ILHAM ULINUHA FADIL", gender: "Laki-laki", birthDate: "14 Agustus 2008", phone: "-", address: "-", avatar: "tkj2/ulin.jpeg", instagram: '-', gelar: '-' },
+            { id: 33, name: "MUHAMMAD AGUS BAHTIAR", gender: "Laki-laki", birthDate: "16 Maret 2009", phone: "-", address: "-", avatar: "tkj2/agus.jpeg", instagram: '-', gelar: '-' },
+            { id: 34, name: "MUHAMMAD AKBAR MAULANA", gender: "Laki-laki", birthDate: "29 Desember 2008", phone: "-", address: "-", avatar: "tkj2/akbar.jpeg", instagram: '-', gelar: '-' },
+            { id: 35, name: "MUHAMMAD NASRUL MUKMIN", gender: "Laki-laki", birthDate: "3 Juli 2008", phone: "- ", address: '-', avatar: 'tkj2/nasrul.jpeg', instagram: '-', gelar: '-' },
+            { id: 36, name: 'MUHAMMAD ZAENAL', gender: 'Laki-laki', birthDate: '08 Agustus 2008', phone: '-', address: '-', avatar: 'tkj2/zaenal.jpeg', instagram: '-', gelar: '-' },
+            { id: 37, name: 'MUHAMMAD ZAKY IRJA NA\'IM', gender: 'Laki-laki', birthDate: '22 Februari 2009', phone: '-', address: '-', avatar: 'tkj2/zaky.jpeg', instagram: '-', gelar: '-' },
+            { id: 38, name: 'NADINE KEYSHA ALIVIA', gender: 'Perempuan', birthDate: '20 Oktober 2008', phone: '-', address: '-', avatar: 'tkj2/nadin.jpeg', instagram: '-', gelar: '-' },
+            { id: 39, name: 'NAFINSA RESIACA PUTRI', gender: 'Perempuan', birthDate: '14 Mei 2009', phone: '-', address: '-', avatar: 'tkj2/resi.jpeg', instagram: '-', gelar: '-' },
+            { id: 40, name: 'NAFISHA SALSABILA WAHYUNINGTYAS', gender: 'Perempuan', birthDate: '04 November 2008', phone: '-', address: '-', avatar: 'tkj2/nafisha.jpeg', instagram: '-', gelar: '-' }
         ];
 
         // Mobile menu
@@ -406,11 +445,11 @@
         const studentDropdown = document.getElementById('studentDropdown');
         function generateStudentDropdown() {
             studentDropdown.innerHTML = '';
-            
+
             // Container untuk grid siswa
             const gridContainer = document.createElement('div');
             gridContainer.className = 'dropdown-students-grid';
-            
+
             // Tampilkan semua 40 siswa dalam grid
             studentsData.forEach(s => {
                 const card = document.createElement('div');
@@ -434,7 +473,7 @@
                 });
                 gridContainer.appendChild(card);
             });
-            
+
             studentDropdown.appendChild(gridContainer);
         }
         generateStudentDropdown();
@@ -443,13 +482,13 @@
         const navLinksList = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.section');
         const actionCards = document.querySelectorAll('.action-card');
-        
-        function switchSection(sectionId, studentId=null) {
-            navLinksList.forEach(l => l.classList.toggle('active', l.dataset.section===sectionId));
+
+        function switchSection(sectionId, studentId = null) {
+            navLinksList.forEach(l => l.classList.toggle('active', l.dataset.section === sectionId));
             sections.forEach(s => {
-                s.classList.toggle('active', s.id===sectionId);
-                if (s.id==='all-students') loadAllStudents();
-                if (s.id==='student-profile' && studentId) loadStudentProfile(studentId);
+                s.classList.toggle('active', s.id === sectionId);
+                if (s.id === 'all-students') loadAllStudents();
+                if (s.id === 'student-profile' && studentId) loadStudentProfile(studentId);
             });
             if (navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
@@ -463,7 +502,7 @@
             grid.innerHTML = '';
             studentsData.forEach(s => {
                 const card = document.createElement('div');
-                card.className='student-card'; card.dataset.studentId=s.id;
+                card.className = 'student-card'; card.dataset.studentId = s.id;
                 card.innerHTML = `
                     <div class="student-card-header">
                         <div class="student-card-avatar"><img src="${s.avatar}"></div>
@@ -472,17 +511,17 @@
                     <div class="student-card-body">
                         <div class="student-card-detail-item"><i class="fas fa-birthday-cake"></i> ${s.birthDate}</div>
                         <div class="student-card-detail-item"><i class="fas fa-phone"></i> ${s.phone}</div>
-                        <div class="student-card-detail-item"><i class="fas fa-map-marker-alt"></i> ${s.address.substring(0,30)}...</div>
+                        <div class="student-card-detail-item"><i class="fas fa-map-marker-alt"></i> ${s.address.substring(0, 30)}...</div>
                     </div>
                 `;
-                card.addEventListener('click', ()=> switchSection('student-profile', s.id));
+                card.addEventListener('click', () => switchSection('student-profile', s.id));
                 grid.appendChild(card);
             });
         }
 
         function loadStudentProfile(id) {
-            const s = studentsData.find(x=>x.id==id);
-            if(!s) return;
+            const s = studentsData.find(x => x.id == id);
+            if (!s) return;
             const prof = document.getElementById('student-profile');
             const instagramLink = s.instagram !== '-' ? `<a href="https://instagram.com/${s.instagram}" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: #f09433; color: white; border-radius: 20px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(240, 148, 51, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';"><i class="fab fa-instagram"></i> Instagram</a>` : '';
             prof.innerHTML = `
@@ -504,7 +543,7 @@
                     <div style="text-align:center; padding: 20px 40px 40px;"><button id="backBtn" class="filter-btn" style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border: none; padding: 12px 32px; border-radius: 20px; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-size: 0.95rem;"><i class="fas fa-arrow-left"></i> Kembali</button></div>
                 </div>
             `;
-            document.getElementById('backBtn').addEventListener('click', ()=> switchSection('all-students'));
+            document.getElementById('backBtn').addEventListener('click', () => switchSection('all-students'));
             document.getElementById('backBtn').addEventListener('mouseover', (e) => {
                 e.target.style.transform = 'translateY(-2px)';
                 e.target.style.boxShadow = '0 8px 20px rgba(59, 130, 246, 0.3)';
@@ -532,7 +571,7 @@
         // Data galeri dari folder gambar lokal
         const totalGalleryImages = 144; // Total gambar di folder gambar/
         const galleryData = [];
-        
+
         // Generate gallery data dari file lokal
         for (let i = 1; i <= totalGalleryImages; i++) {
             galleryData.push({
@@ -542,7 +581,7 @@
                 icon: "fa-images"
             });
         }
-        
+
         // Tambah easter egg
         galleryData.push({
             src: `tkj2/egg.jpeg`,
@@ -562,30 +601,30 @@
         function loadGallery(filterText = '') {
             const grid = document.getElementById('galeriGrid');
             if (!grid) return;
-            
+
             grid.innerHTML = '';
             let displayedCount = 0;
             const searchLower = filterText.toLowerCase();
-            
+
             // Cek apakah mencari egg dengan "j2"
             const showEasterEgg = searchLower === 'j2';
-            
+
             galleryData.forEach((item, index) => {
                 const itemNumber = index + 1;
                 const captionLower = item.caption.toLowerCase();
-                
+
                 let shouldDisplay = false;
                 if (item.isEasterEgg) {
                     shouldDisplay = showEasterEgg;
                 } else {
                     shouldDisplay = searchLower === '' || captionLower.includes(searchLower) || itemNumber.toString().includes(filterText);
                 }
-                
+
                 if (shouldDisplay) {
                     const galleryItem = document.createElement('div');
                     galleryItem.className = 'galeri-item';
                     galleryItem.onclick = () => openModal(index);
-                    
+
                     galleryItem.innerHTML = `
                         <img src="${item.src}" alt="${item.caption}" loading="lazy">
                         <div class="galeri-overlay">
@@ -595,12 +634,12 @@
                             <i class="fas ${item.icon}"></i> ${item.caption}
                         </div>
                     `;
-                    
+
                     grid.appendChild(galleryItem);
                     displayedCount++;
                 }
             });
-            
+
             if (displayedCount === 0) {
                 grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #94a3b8; font-size: 1.1rem;"><i class="fas fa-search" style="font-size: 2rem; margin-bottom: 10px; display: block;"></i>Tidak ada foto yang cocok dengan pencarian "' + filterText + '"</div>';
             }
@@ -621,14 +660,14 @@
         // Fungsi untuk menampilkan gambar di modal
         function showImage() {
             const item = galleryData[currentImageIndex];
-            
+
             // Tampilkan loading
             modalLoading.style.display = "block";
             modalImg.style.display = "none";
-            
+
             // Buat objek gambar baru untuk preload
             const img = new Image();
-            img.onload = function() {
+            img.onload = function () {
                 modalLoading.style.display = "none";
                 modalImg.style.display = "block";
                 modalImg.src = this.src;
@@ -640,19 +679,19 @@
         // Fungsi untuk mengganti gambar (prev/next)
         function changeImage(direction) {
             currentImageIndex += direction;
-            
+
             // Loop jika mencapai akhir
             if (currentImageIndex >= galleryData.length) {
                 currentImageIndex = 0;
             } else if (currentImageIndex < 0) {
                 currentImageIndex = galleryData.length - 1;
             }
-            
+
             showImage();
         }
 
         // Event listener untuk keyboard navigation
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (modal.style.display === "block") {
                 if (e.key === "ArrowLeft") {
                     changeImage(-1);
@@ -665,7 +704,7 @@
         });
 
         // Tutup modal jika klik di luar gambar
-        modal.addEventListener('click', function(e) {
+        modal.addEventListener('click', function (e) {
             if (e.target === modal) {
                 closeModal();
             }
@@ -673,7 +712,7 @@
 
         // Override switchSection untuk load galeri ketika dibuka
         const originalSwitchSection = switchSection;
-        window.switchSection = function(sectionId, studentId=null) {
+        window.switchSection = function (sectionId, studentId = null) {
             originalSwitchSection(sectionId, studentId);
             if (sectionId === 'gallery') {
                 loadGallery();
@@ -681,7 +720,7 @@
                 if (searchInput) searchInput.value = '';
             }
         }
-        
+
         // Event listener untuk search galeri
         document.addEventListener('DOMContentLoaded', () => {
             // Easter Egg Button Handler
@@ -694,19 +733,19 @@
                     const eggIndex = galleryData.length - 1;
                     openModal(eggIndex);
                 });
-                
+
                 easterEggBtn.addEventListener('mouseenter', (e) => {
                     easterEggBtn.style.opacity = '0.5';
                 });
-                
+
                 easterEggBtn.addEventListener('mouseleave', (e) => {
                     easterEggBtn.style.opacity = '0.12';
                 });
             }
-            
+
             const searchInput = document.getElementById('gallerySearch');
             const clearBtn = document.getElementById('clearSearchBtn');
-            
+
             if (searchInput) {
                 searchInput.addEventListener('input', (e) => {
                     loadGallery(e.target.value);
@@ -714,7 +753,7 @@
                 searchInput.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') e.preventDefault();
                 });
-                
+
                 if (clearBtn) {
                     clearBtn.addEventListener('click', () => {
                         searchInput.value = '';
@@ -751,7 +790,187 @@
                     commentsForm.reset();
                 });
             }
+
+            // ===== AI CHATBOT FUNCTIONALITY =====
+            const chatbotBtn = document.getElementById('chatbotBtn');
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            const closeChatBtn = document.getElementById('closeChatBtn');
+            const chatInput = document.getElementById('chatInput');
+            const sendChatBtn = document.getElementById('sendChatBtn');
+            const chatbotMessages = document.getElementById('chatbotMessages');
+
+            if (chatbotBtn && chatbotWindow) {
+                chatbotBtn.addEventListener('click', () => {
+                    chatbotWindow.classList.toggle('active');
+                });
+
+                closeChatBtn.addEventListener('click', () => {
+                    chatbotWindow.classList.remove('active');
+                });
+
+                let chatHistory = [];
+                const STORAGE_KEY = 'rkj2_chat_history';
+                const ADMIN_KEY = 'rkj2_is_admin';
+                const MAX_MESSAGES = 50;
+
+                // Status Admin (simpan di localStorage biar awet)
+                let isAdmin = localStorage.getItem(ADMIN_KEY) === 'true';
+
+                // Fungsi untuk cek kapasitas memori browser
+                function checkStorageLimit() {
+                    try {
+                        const totalData = JSON.stringify(localStorage).length;
+                        const limitInBytes = 5 * 1024 * 1024; // Estimasi limit 5MB
+                        const usagePercentage = (totalData / limitInBytes) * 100;
+
+                        if (usagePercentage > 80) {
+                            console.warn("Peringatan: Memori chat hampir penuh!");
+                            // Tampilkan pesan peringatan ke user satu kali
+                            if (!document.getElementById('storageWarning')) {
+                                const warningDiv = document.createElement('div');
+                                warningDiv.id = 'storageWarning';
+                                warningDiv.className = 'bot-msg warning';
+                                warningDiv.style.background = '#fef3c7';
+                                warningDiv.style.color = '#92400e';
+                                warningDiv.style.fontSize = '0.8rem';
+                                warningDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Memori chat hampir penuh nih ngab. Hapus history kalau udah berat ya!';
+                                chatbotMessages.appendChild(warningDiv);
+                            }
+                        }
+                    } catch (e) {
+                        console.error("Gagal cek storage:", e);
+                    }
+                }
+
+                // Fungsi muat history saat startup
+                function loadChatHistory() {
+                    const saved = localStorage.getItem(STORAGE_KEY);
+                    if (saved) {
+                        chatHistory = JSON.parse(saved);
+                        chatHistory.forEach(msg => {
+                            const msgDiv = document.createElement('div');
+                            msgDiv.className = msg.role === 'user' ? 'user-msg' : 'bot-msg';
+                            msgDiv.textContent = msg.text;
+                            chatbotMessages.appendChild(msgDiv);
+                        });
+                        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                        checkStorageLimit();
+                    }
+                }
+
+                async function handleChat() {
+                    const text = chatInput.value.trim();
+                    if (!text) return;
+
+                    // Fitur Login Admin Rahasia
+                    if (text === 'akun123') {
+                        isAdmin = true;
+                        localStorage.setItem(ADMIN_KEY, 'true');
+                        chatInput.value = '';
+                        addMessage("🔒 Admin Mode Aktif! Sekarang lu bisa nambahin respon otomatis ngab.", "bot");
+                        return;
+                    }
+
+                    // Fitur Logout Admin (Opsional)
+                    if (text === 'logout123') {
+                        isAdmin = false;
+                        localStorage.removeItem(ADMIN_KEY);
+                        chatInput.value = '';
+                        addMessage("🔓 Admin Mode Mati! Sekarang lu jadi pengunjung biasa lagi.", "bot");
+                        return;
+                    }
+
+                    addMessage(text, 'user');
+                    chatInput.value = '';
+
+                    // Typing indicator sederhana
+                    const typingDiv = document.createElement('div');
+                    typingDiv.className = 'bot-msg typing';
+                    typingDiv.innerHTML = '<i class="fas fa-ellipsis-h"></i>';
+                    chatbotMessages.appendChild(typingDiv);
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                    setTimeout(() => {
+                        if (typingDiv.parentNode) chatbotMessages.removeChild(typingDiv);
+                        const localReply = getBotResponse(text);
+                        addMessage(localReply, 'bot');
+
+                        // Deteksi jika jawaban adalah fallback (Bot tidak tahu)
+                        const isFallback = localReply.includes("Waduh sori bro") || 
+                                          localReply.includes("otak AI gue tiba-tiba nge-blank") ||
+                                          localReply.includes("gue kurang paham") ||
+                                          localReply.includes("Sayangnya gue nggak tau") ||
+                                          localReply.includes("sinyal otak buatan gue") ||
+                                          localReply.includes("Gue ini cuma bot asisten");
+
+                        // Hanya tampilkan tombol tambah jika statusnya ADMIN
+                        if (isFallback && isAdmin) {
+                            const suggestDiv = document.createElement('div');
+                            suggestDiv.className = 'admin-suggest';
+                            suggestDiv.innerHTML = `
+                                <button onclick="copyResponFormat('${text.replace(/'/g, "\\'")}')">
+                                    <i class="fas fa-plus-circle"></i> Tambah Jawaban (Admin)
+                                </button>
+                            `;
+                            chatbotMessages.appendChild(suggestDiv);
+                            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                        }
+                    }, 600);
+                }
+
+                // Fungsi global untuk copy format JSON bagi admin
+                window.copyResponFormat = function(userInput) {
+                    const format = `    {
+        keywords: ["${userInput.toLowerCase()}"],
+        response: "ISI_JAWABAN_DI_SINI"
+    },`;
+                    navigator.clipboard.writeText(format).then(() => {
+                        alert("Gokil! Format kode udah di-copy ngab.\n\nLangkah selanjutnya:\n1. Buka file 'chatbot-data.js'\n2. Scroll ke paling bawah (sebelum tanda ])\n3. Paste kodenya di sana\n4. Ganti 'ISI_JAWABAN_DI_SINI' sama jawaban lu.");
+                    });
+                }
+
+                function addMessage(msg, type) {
+                    const msgDiv = document.createElement('div');
+                    msgDiv.className = type === 'user' ? 'user-msg' : 'bot-msg';
+                    msgDiv.textContent = msg;
+                    chatbotMessages.appendChild(msgDiv);
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                    // Update history
+                    chatHistory.push({ role: type, text: msg });
+                    if (chatHistory.length > MAX_MESSAGES) chatHistory.shift();
+
+                    // Simpan ke LocalStorage
+                    try {
+                        localStorage.setItem(STORAGE_KEY, JSON.stringify(chatHistory));
+                        checkStorageLimit();
+                    } catch (e) {
+                        console.error("Storage Error:", e);
+                        addMessage("Waduh, memori browser lu penuh banget ngab! Hapus history dulu biar gue bisa nyimpen chat lagi.", "bot");
+                    }
+                }
+
+                // Inisialisasi history
+                loadChatHistory();
+
+                const clearChatBtn = document.getElementById('clearChatBtn');
+                if (clearChatBtn) {
+                    clearChatBtn.addEventListener('click', () => {
+                        if (confirm("Hapus semua history chat, ngab?")) {
+                            localStorage.removeItem(STORAGE_KEY);
+                            chatHistory = [];
+                            chatbotMessages.innerHTML = '<div class="bot-msg">History dihapus! Ada yang bisa gue bantu lagi?</div>';
+                        }
+                    });
+                }
+
+                sendChatBtn.addEventListener('click', handleChat);
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') handleChat();
+                });
+            }
         });
     </script>
 </body>
+
 </html>
