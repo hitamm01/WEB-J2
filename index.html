@@ -391,7 +391,7 @@
     <script>
         // 40 DATA SISWA (nama, tanggal lahir, telepon, alamat, instagram, gelar)
         const studentsData = [
-            { id: 1, name: "FOIRENT FEBRIANTY", gender: "perempuan", birthDate: "03 Februari 2009", phone: "-", address: "-", avatar: "tkj2/fio.jpeg", instagram: "-", gelar: "(EL KLENGER)" },
+            { id: 1, name: "FOIRENT FEBRIANTY", gender: "perempuan", birthDate: "03 Februari 2009", phone: "-", address: "-", avatar: "tkj2/fio.jpeg", instagram: "-", gelar: "-" },
             { id: 2, name: "FITO AZKA WIRADANA", gender: "laki-laki", birthDate: "09 April 2009", phone: "-", address: "-", avatar: "tkj2/fito.jpeg", instagram: "-", gelar: "-" },
             { id: 3, name: "GALANG FERDIANTO", gender: "laki-laki", birthDate: "04 November 2008", phone: "-", address: "-", avatar: "tkj2/galfer.jpeg", instagram: "-", gelar: "-" },
             { id: 4, name: "GALANG SAKTIAWAN", gender: "Laki-laki", birthDate: "22 Mei 2008", phone: "-", address: "-", avatar: "tkj2/galsak.jpeg", instagram: "-", gelar: "-" },
@@ -569,7 +569,7 @@
 
         // ===== GALLERY MODAL FUNCTIONS =====
         // Data galeri dari folder gambar lokal
-        const totalGalleryImages = 144; // Total gambar di folder gambar/
+        const totalGalleryImages = 200; // Total gambar di folder gambar/
         const galleryData = [];
 
         // Generate gallery data dari file lokal
@@ -813,8 +813,9 @@
                 const ADMIN_KEY = 'rkj2_is_admin';
                 const MAX_MESSAGES = 50;
 
-                // Status Admin (simpan di localStorage biar awet)
+                // Status Akses Rahasia
                 let isAdmin = localStorage.getItem(ADMIN_KEY) === 'true';
+                let isSpecialAccess = localStorage.getItem('rkj2_special') === 'true'; // Status anak TKJ 2 atau Admin
 
                 // Fungsi untuk cek kapasitas memori browser
                 function checkStorageLimit() {
@@ -862,21 +863,58 @@
                     const text = chatInput.value.trim();
                     if (!text) return;
 
-                    // Fitur Login Admin Rahasia
-                    if (text === 'akun123') {
-                        isAdmin = true;
-                        localStorage.setItem(ADMIN_KEY, 'true');
+                    // Fitur Rahasia Anak TKJ 2 (Respon Lebih Asik & Random)
+                    if (text === 'admin') {
+                        isSpecialAccess = true;
+                        localStorage.setItem('rkj2_special', 'true');
                         chatInput.value = '';
-                        addMessage("🔒 Admin Mode Aktif! Sekarang lu bisa nambahin respon otomatis ngab.", "bot");
+                        const greetings = [
+                            "🔥 WADUH! Ada tamu VVIP nih! Welcome back bosku anak TKJ 2 paling solid se-kecamatan! 😎\n\n(Akses Khusus TKJ 2 AKTIF! Coba tanya soal 'rahasia guru', 'sirkel kelas', atau 'kasus' wkwk)",
+                            "🚀 GOKIL! Emang cuma anak TKJ 2 yang tau kode sakti ginian. Mau nanya apa hari ini ngab?\n\n(Mode Rahasia Terbuka! Coba tanya hal-hal yang gak diketahui orang luar)",
+                            "✨ ANJAY! Mode 'Anak Kesayangan' aktif! Sikat ngab, mau spill apa kita hari ini?",
+                            "😎 Mantap bener! Aura anak TKJ 2 emang beda ya. Akses rahasia terbuka buat lu bos!"
+                        ];
+                        const randomGreet = greetings[Math.floor(Math.random() * greetings.length)];
+                        addMessage(randomGreet, "bot");
                         return;
                     }
 
-                    // Fitur Logout Admin (Opsional)
-                    if (text === 'ikan123') {
+                    if (text === 'stop') {
+                        isSpecialAccess = false;
                         isAdmin = false;
+                        localStorage.removeItem('rkj2_special');
                         localStorage.removeItem(ADMIN_KEY);
                         chatInput.value = '';
-                        addMessage("🔓 Admin Mode Mati! Sekarang lu jadi pengunjung biasa lagi.", "bot");
+                        const closings = [
+                            "👋 Yah, mau cabut ya? Oke deh, hati-hati di jalan bosku. Jangan lupa besok mabar lagi!",
+                            "✨ Siap laksanakan! Mode rahasia dinonaktifkan. Sampai ketemu lagi anak TKJ 2 paling keren!",
+                            "🫡 Oke ngab, gue balik ke server dulu. Kalau kangen ketik 'admin' lagi ya!",
+                            "🚀 Cabut dulu bos? Sip, jangan lupa tugas dikerjain jangan mabar mulu! Haha."
+                        ];
+                        const randomClose = closings[Math.floor(Math.random() * closings.length)];
+                        addMessage(randomClose, "bot");
+                        return;
+                    }
+
+                    // 2. Fitur Login Admin (Mode Edit)
+                    if (text === 'akun123') {
+                        isAdmin = true;
+                        isSpecialAccess = true;
+                        localStorage.setItem(ADMIN_KEY, 'true');
+                        localStorage.setItem('rkj2_special', 'true');
+                        chatInput.value = '';
+                        addMessage("🔒 Admin Mode.", "bot");
+                        return;
+                    }
+
+                    // Fitur Logout Admin
+                    if (text === 'ikan123') {
+                        isAdmin = false;
+                        isSpecialAccess = false;
+                        localStorage.removeItem(ADMIN_KEY);
+                        localStorage.removeItem('rkj2_special');
+                        chatInput.value = '';
+                        addMessage("🔓 Admin Mode Mati");
                         return;
                     }
 
@@ -892,16 +930,16 @@
 
                     setTimeout(() => {
                         if (typingDiv.parentNode) chatbotMessages.removeChild(typingDiv);
-                        const localReply = getBotResponse(text);
+                        const localReply = getBotResponse(text, isSpecialAccess);
                         addMessage(localReply, 'bot');
 
                         // Deteksi jika jawaban adalah fallback (Bot tidak tahu)
-                        const isFallback = localReply.includes("Waduh sori bro") || 
-                                          localReply.includes("otak AI gue tiba-tiba nge-blank") ||
-                                          localReply.includes("gue kurang paham") ||
-                                          localReply.includes("Sayangnya gue nggak tau") ||
-                                          localReply.includes("sinyal otak buatan gue") ||
-                                          localReply.includes("Gue ini cuma bot asisten");
+                        const isFallback = localReply.includes("Waduh sori bro") ||
+                            localReply.includes("otak AI gue tiba-tiba nge-blank") ||
+                            localReply.includes("gue kurang paham") ||
+                            localReply.includes("Sayangnya gue nggak tau") ||
+                            localReply.includes("sinyal otak buatan gue") ||
+                            localReply.includes("Gue ini cuma bot asisten");
 
                         // Hanya tampilkan tombol tambah jika statusnya ADMIN
                         if (isFallback && isAdmin) {
@@ -919,7 +957,7 @@
                 }
 
                 // Fungsi global untuk copy format JSON bagi admin
-                window.copyResponFormat = function(userInput) {
+                window.copyResponFormat = function (userInput) {
                     const format = `    {
         keywords: ["${userInput.toLowerCase()}"],
         response: "ISI_JAWABAN_DI_SINI"
