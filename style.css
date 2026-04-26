@@ -861,7 +861,11 @@ footer {
     border: 1px solid #d6249f;
 }
 
-/* Responsive Design */
+/* ===================================================================
+   RESPONSIVE DESIGN - Mobile-First Unique Experience
+   =================================================================== */
+
+/* ---------- Tablet Breakpoint (max-width: 992px) ---------- */
 @media (max-width: 992px) {
     .nav-links {
         display: none;
@@ -870,15 +874,23 @@ footer {
         left: 0;
         width: 100%;
         background: rgba(15, 23, 42, 0.98);
-        backdrop-filter: blur(12px);
+        backdrop-filter: blur(16px);
         flex-direction: column;
-        padding: 20px;
-        gap: 8px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 16px;
+        gap: 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        max-height: 80vh;
+        overflow-y: auto;
     }
 
     .nav-links.active {
         display: flex;
+        animation: slideNavDown 0.3s ease-out;
+    }
+
+    @keyframes slideNavDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .nav-links li {
@@ -909,36 +921,699 @@ footer {
     }
 }
 
+/* ---------- Mobile Breakpoint (max-width: 768px) ---------- */
 @media (max-width: 768px) {
-    .class-info {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
+
+    /* === BODY & GLOBAL === */
+    body {
+        padding-top: 64px;
+        font-size: 15px;
+        -webkit-text-size-adjust: 100%;
     }
 
-    .info-item {
-        width: 100%;
+    /* === NAVBAR - Compact Mobile Header === */
+    .navbar {
+        padding: 8px 0;
+        background: rgba(15, 23, 42, 0.96);
+    }
+
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .logo-img {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+    }
+
+    .logo-text {
+        font-size: 1.15rem;
+    }
+
+    .nav-links {
+        top: 54px;
         padding: 12px;
+        gap: 2px;
     }
 
-    .student-header {
-        flex-direction: column;
+    .nav-links a {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        border-radius: 14px;
+    }
+
+    .nav-links a i {
+        width: 24px;
         text-align: center;
     }
 
-    .student-avatar {
-        margin-right: 0;
+    /* === CONTAINER === */
+    .container {
+        padding: 12px;
+    }
+
+    /* === HOME SECTION - Mobile Hero === */
+    header {
+        padding: 32px 20px;
+        border-radius: 20px;
         margin-bottom: 20px;
     }
 
     header h1 {
-        font-size: 1.6rem;
+        font-size: 1.35rem;
+        line-height: 1.3;
+    }
+
+    header h1 i {
+        display: block;
+        margin-bottom: 8px;
+        margin-right: 0;
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    /* === CLASS INFO - Horizontal Scroll Cards === */
+    .class-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 16px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .info-item {
+        padding: 14px 10px;
+        min-width: unset;
+        background: #f8fafc;
+        border-radius: 16px;
+        border: 1px solid #eef2ff;
+    }
+
+    .info-item i {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .info-item h3 {
+        font-size: 0.95rem;
+    }
+
+    .info-item p {
+        font-size: 0.8rem;
+        color: #64748b;
+    }
+
+    /* === QUICK ACTIONS - 2-Column Grid for Mobile === */
+    .quick-actions {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .action-card {
+        padding: 20px 14px;
+        border-radius: 18px;
+    }
+
+    .action-card i {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .action-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .action-card p {
+        font-size: 0.75rem;
+        color: #64748b;
+    }
+
+    .action-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+
+    .action-card:active {
+        transform: scale(0.97);
+        transition: transform 0.1s;
+    }
+
+    /* === SOCIAL LINKS - Vertical Stack on Mobile === */
+    .social-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 20px 16px;
+        border-radius: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .social-btn {
-        padding: 8px 20px;
-        min-width: 130px;
+        padding: 14px 20px;
+        min-width: unset;
+        width: 100%;
+        font-size: 1rem;
+        border-radius: 16px;
+        justify-content: center;
+    }
+
+    .social-btn i {
+        font-size: 1.3rem;
+    }
+
+    /* === STUDENT PROFILE - Mobile Optimized === */
+    .student-container {
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .student-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 28px 20px;
+    }
+
+    .student-avatar {
+        width: 110px;
+        height: 110px;
+        border-radius: 55px;
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    .student-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .student-details-simple {
+        padding: 20px 16px;
+        gap: 10px;
+    }
+
+    .detail-row {
+        padding: 14px 16px;
+        border-radius: 14px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .detail-row i {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .detail-row .label {
+        min-width: 90px;
+        font-size: 0.82rem;
+    }
+
+    .detail-row .value {
+        font-size: 0.88rem;
+        width: 100%;
+        padding-left: 44px;
+        margin-top: -4px;
+    }
+
+    /* === ALL STUDENTS - Compact Mobile Cards === */
+    .all-students-container {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .student-info-header {
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+    }
+
+    .students-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .student-card {
+        border-radius: 18px;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .student-card-header {
+        min-height: unset;
+        padding: 14px;
+        width: 110px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .student-card-avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 26px;
+        margin: 0 0 6px 0;
+    }
+
+    .student-card-header h3 {
+        font-size: 0.7rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .student-card-body {
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+    }
+
+    .student-card-detail-item {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+
+    .student-card:hover {
+        transform: none;
+    }
+
+    .student-card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s;
+    }
+
+    /* === WALI KELAS - Stacked Cards === */
+    .wali-kelas-container {
+        padding: 12px;
+    }
+
+    .wali-kelas-title {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .wali-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .wali-card {
+        border-radius: 20px;
+    }
+
+    .wali-card-header {
+        padding: 20px 16px 16px;
+    }
+
+    .wali-photo {
+        width: 90px;
+        height: 90px;
+        border-radius: 45px;
+        margin-bottom: 12px;
+    }
+
+    .wali-card-header h3 {
+        font-size: 1.15rem;
+    }
+
+    .wali-card-body {
+        padding: 16px;
+    }
+
+    .wali-info-item {
+        margin-bottom: 14px;
+    }
+
+    .wali-card:hover {
+        transform: none;
+    }
+
+    /* === STRUCTURE TREE - Vertical Stack on Mobile === */
+    .structure-tree {
+        padding: 20px 14px;
+        border-radius: 18px;
+    }
+
+    .tree-level {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .top-level,
+    .middle-level {
+        margin-bottom: 24px;
+    }
+
+    .tree-member {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .member-thumb {
+        width: 80px;
+        height: 80px;
+    }
+
+    .member-box {
+        min-width: unset;
+        width: 100%;
+        padding: 12px 16px;
+    }
+
+    .member-position {
+        font-size: 0.7rem;
+    }
+
+    .member-fullname {
+        font-size: 0.82rem;
+    }
+
+    .tree-connector {
+        height: 30px;
+        margin: -5px 0 10px 0;
+    }
+
+    .connector-line.vertical {
+        height: 30px;
+        top: -30px;
+    }
+
+    .connector-line.horizontal {
+        display: none;
+    }
+
+    /* === COMMENTS - Mobile Friendly === */
+    .comments-container {
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+
+    .comments-header h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .form-textarea-simple {
+        font-size: 16px; /* Prevents iOS zoom */
+        padding: 14px;
+        min-height: 100px;
+        border-radius: 14px;
+    }
+
+    .submit-btn-simple {
+        padding: 14px 20px;
+        font-size: 1rem;
+        border-radius: 14px;
+    }
+
+    /* === GALLERY - 2 Columns Mobile Grid === */
+    .galeri-container {
+        padding: 12px;
+    }
+
+    .galeri-title {
+        font-size: 1.4rem;
+        margin-bottom: 16px;
+    }
+
+    .galeri-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .galeri-item {
+        border-radius: 14px;
+        border-width: 1px;
+    }
+
+    .galeri-item img {
+        height: 130px;
+    }
+
+    .galeri-caption {
+        padding: 8px 6px;
+        font-size: 0.72rem;
+        gap: 4px;
+    }
+
+    .galeri-overlay i {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+    }
+
+    /* === MODAL - Full Screen Mobile === */
+    .modal-content {
+        max-width: 96%;
+        max-height: 80vh;
+        border-width: 2px;
+        border-radius: 8px;
+    }
+
+    .modal-prev,
+    .modal-next {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .modal-prev {
+        left: 8px;
+    }
+
+    .modal-next {
+        right: 8px;
+    }
+
+    .close-modal {
+        top: 10px;
+        right: 10px;
+        font-size: 28px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .modal-caption {
         font-size: 0.85rem;
+        bottom: 12px;
+        padding: 10px 16px;
+        width: 90%;
+        border-radius: 14px;
+    }
+
+    /* === DROPDOWN - Full Width Mobile === */
+    .dropdown-menu {
+        min-width: unset;
+    }
+
+    .dropdown-students-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 8px;
+        max-width: 100%;
+    }
+
+    .dropdown-student-card {
+        padding: 10px;
+        min-height: 110px;
+        border-radius: 12px;
+    }
+
+    .dropdown-student-card .avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+    .dropdown-student-card .name {
+        font-size: 0.72rem;
+    }
+
+    .dropdown-student-card .info {
+        font-size: 0.65rem;
+    }
+
+    /* === CHATBOT - Full Width Mobile === */
+    .chatbot-btn {
+        bottom: 20px;
+        right: 16px;
+        width: 56px;
+        height: 56px;
+        font-size: 1.5rem;
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+    }
+
+    .chatbot-window {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100dvh;
+        border-radius: 0;
+        border: none;
+    }
+
+    .chatbot-window.active {
+        animation: chatSlideUp 0.3s ease-out;
+    }
+
+    @keyframes chatSlideUp {
+        from { transform: translateY(100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .chatbot-header {
+        padding: 16px 20px;
+        padding-top: max(16px, env(safe-area-inset-top));
+    }
+
+    .chatbot-messages {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .user-msg,
+    .bot-msg {
+        max-width: 85%;
+        font-size: 0.9rem;
+        padding: 10px 14px;
+        border-radius: 16px;
+    }
+
+    .chatbot-input {
+        padding: 14px 16px;
+        padding-bottom: max(14px, env(safe-area-inset-bottom));
+        gap: 10px;
+    }
+
+    .chatbot-input input {
+        padding: 12px 16px;
+        font-size: 16px; /* Prevents iOS zoom */
+        border-radius: 24px;
+    }
+
+    .chatbot-input button {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+    }
+
+    /* === SECTION TITLES on Mobile === */
+    #all-students h2,
+    #structure h2 {
+        font-size: 1.3rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Social heading on mobile */
+    #home h2[style] {
+        font-size: 1.1rem !important;
+        margin-top: 24px !important;
+        margin-bottom: 14px !important;
+    }
+
+    /* === FOOTER === */
+    footer {
+        margin-top: 30px;
+        border-radius: 16px;
+    }
+
+    /* === ADMIN SUGGEST BUTTON === */
+    .admin-suggest {
+        margin-left: 12px;
+    }
+}
+
+/* ---------- Small Phone Breakpoint (max-width: 400px) ---------- */
+@media (max-width: 400px) {
+    .class-info {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-align: left;
+        padding: 12px 14px;
+    }
+
+    .info-item i {
+        font-size: 1.3rem;
+        margin-bottom: 0;
+    }
+
+    .info-item h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .info-item p {
+        font-size: 0.78rem;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .action-card {
+        padding: 16px 10px;
+    }
+
+    .action-card i {
+        font-size: 1.5rem;
+    }
+
+    .action-card h3 {
+        font-size: 0.82rem;
+    }
+
+    .action-card p {
+        font-size: 0.7rem;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .galeri-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .galeri-item img {
+        height: 100px;
+    }
+
+    .galeri-caption {
+        font-size: 0.65rem;
+        padding: 6px 4px;
+    }
+
+    .student-card-header {
+        width: 90px;
+        padding: 10px;
+    }
+
+    .student-card-avatar {
+        width: 44px;
+        height: 44px;
+    }
+
+    .student-card-header h3 {
+        font-size: 0.65rem;
     }
 }
 
@@ -1873,7 +2548,8 @@ footer {
     gap: 10px;
 }
 
-.chatbot-header button, .chatbot-header-btns button {
+.chatbot-header button,
+.chatbot-header-btns button {
     background: rgba(255, 255, 255, 0.1);
     border: none;
     color: white;
@@ -1888,7 +2564,8 @@ footer {
     font-size: 0.9rem;
 }
 
-.chatbot-header button:hover, .chatbot-header-btns button:hover {
+.chatbot-header button:hover,
+.chatbot-header-btns button:hover {
     background: rgba(255, 255, 255, 0.25);
     transform: scale(1.1);
 }
@@ -1904,9 +2581,19 @@ footer {
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
 }
 
 .chatbot-messages {
